@@ -1,200 +1,338 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "name": "Jan Kren",
+    "email": "jan.kren@psi.ch",
+    "phone": "+41 78 444 60 33",
+    "birthDate": "1995-07-15",
+    "nationality": "Slovenian",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+      "address": "Forschungsstrasse 3.73",
+      "postalCode": "5234",
+      "city": "Villigen",
+      "country": "Switzerland"
+    }
   },
-  "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Faculty of Mathematics and Physics, University of Ljubljana",
+      "studyProgram": "Doctoral Programme Mathematics and Physics",
+      "field": "Physics",
+      "module": "Nuclear Engineering",
+      "degree": "PhD in Physics (Nuclear Engineering)",
+      "thesis": "Dynamics of a Taylor bubble in counter-current turbulent flow",
+      "supervisor": "dr. Blaž Mikuž",
+      "startDate": "2020-10",
+      "endDate": "2024-09"
+    },
+    {
+      "institution": "Faculty of Mathematics and Physics, University of Ljubljana",
+      "studyProgram": "Nuclear Engineering, Second Cycle",
+      "degree": "MSc in Nuclear Engineering",
+      "thesis": "Large Eddy Simulations of turbulent heat transfer near heated foil",
+      "supervisor": "prof. dr. Iztok Tiselj",
+      "startDate": "2018-10",
+      "endDate": "2020-09"
+    },
+    {
+      "institution": "Faculty of Mathematics and Physics, University of Ljubljana",
+      "studyProgram": "Physics, First Cycle",
+      "degree": "BSc in Physics",
+      "seminar": "Knots in biological and soft matter",
+      "supervisor": "dr. Simon Čopar",
+      "startDate": "2014-10",
+      "endDate": "2018-09"
     }
   ],
-  "awards": [
+  "work": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "employer": "Paul Scherrer Institute",
+      "address": "Forschungsstrasse 111, 5234 Villigen, Switzerland",
+      "position": "Postdoctoral researcher",
+      "startDate": "2025-01",
+      "endDate": "present"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "employer": "Reactor Engineering Division (R4), Jožef Stefan Institute",
+      "address": "Jamova cesta 39, 1000 Ljubljana",
+      "position": "Postdoctoral researcher",
+      "startDate": "2024-10",
+      "endDate": "2025-01"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
+      "employer": "Jožef Stefan Institute",
+      "position": "Young Researcher/PhD student",
+      "startDate": "2020-10",
+      "endDate": "2024-09"
     },
     {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "employer": "Jožef Stefan Institute",
+      "position": "Student Researcher",
+      "startDate": "2018-04",
+      "endDate": "2020-09"
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
+      "language": "Slovenian",
+      "fluency": "Native"
     },
     {
       "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "fluency": "C1"
+    },
+    {
+      "language": "German",
+      "fluency": "B1"
     }
   ],
-  "interests": [
+  "memberships": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "organization": "Nuclear Society of Slovenia",
+      "role": "Member",
+      "startDate": "2021",
+      "endDate": "present"
+    },
+    {
+      "organization": "Nuclear Society of Slovenia",
+      "role": "Vice-president Young Generation Network",
+      "startDate": "2022",
+      "endDate": "2024"
+    },
+    {
+      "organization": "American Physical Society",
+      "role": "Member",
+      "startDate": "2021",
+      "endDate": "present"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python (Advanced)",
+        "C++ (Advanced)",
+        "Fortran (Basic)",
+        "Matlab (Advanced)",
+        "Git"
+      ]
+    },
+    {
+      "category": "Fluid Dynamics",
+      "keywords": [
+        "Direct Numerical Simulations",
+        "Large Eddy Simulations",
+        "OpenFOAM",
+        "two-phase flows",
+        "interface waves",
+        "heat transfer",
+        "subgrid-scale modelling",
+        "Volume of Fluid",
+        "Particle Image Velocimetry"
+      ]
+    },
+    {
+      "category": "Other",
+      "keywords": [
+        "Data analysis",
+        "public speaking",
+        "presenting",
+        "teaching"
       ]
     }
   ],
-  "references": [
+  "awards": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "year": "2024",
+      "title": "Best young author paper at the conference 'Nuclear Energy for New Europe – NENE2024'",
+      "awarder": "Nuclear Society of Slovenia"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "year": "2024",
+      "title": "Best paper at the conference 'Saudi International Conference on Nuclear Power - SCOPE'",
+      "awarder": "King Fahd University of Petroleum and Minerals"
+    },
+    {
+      "year": "2022",
+      "title": "Scholarship for participation at European Youth Energy Forum",
+      "location": "Lisbon, Portugal"
+    },
+    {
+      "year": "2021",
+      "title": "Best young author paper at the conference 'Advances in computational heat transfer - CHT-21'",
+      "awarder": "International Centre for Heat and Mass Transfer"
+    },
+    {
+      "year": "2020",
+      "title": "Dean's award for extraordinary student achievements",
+      "awarder": "Faculty of Mathematics and Physics, University of Ljubljana"
+    },
+    {
+      "year": "2018-2020",
+      "title": "Scholarship of Jožef Stefan Institute"
+    },
+    {
+      "year": "2012-2016",
+      "title": "Zois Scholarship for extraordinary students"
     }
   ],
-  "projects": [
+  "researchCourses": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "date": "August 2024",
+      "location": "Tokyo, Japan",
+      "institutions": [
+        "University of Tokyo",
+        "Japan Atomic Energy Agency",
+        "International Atomic Energy Agency"
+      ],
+      "course": "Nuclear Energy Management School"
+    },
+    {
+      "date": "February 2024",
+      "location": "Brussels, Belgium",
+      "institution": "VKI (von Karman Institute for Fluid Dynamics)",
+      "course": "Machine Learning for Fluid Dynamics"
+    },
+    {
+      "date": "March 2023",
+      "location": "Kumatori, Japan",
+      "institution": "KURNS (Institute for Integrated Radiation and Nuclear Science), Kyoto University",
+      "course": "State-of-the-art experimental techniques for two-phase flows",
+      "supervisor": "prof. dr. Yasushi Saito"
+    },
+    {
+      "date": "February 2023",
+      "location": "Zurich, Switzerland",
+      "institution": "ETH Zurich",
+      "course": "Short Courses on Multiphase Flow"
+    },
+    {
+      "date": "November 2021",
+      "location": "Petten, Netherlands",
+      "institution": "NRG (Nuclear Research and Consultancy Group)",
+      "course": "Development of OpenFOAM solver",
+      "supervisor": "dr. Edo Frederix"
+    },
+    {
+      "date": "March 2021",
+      "location": "Gottingen, Germany (Online)",
+      "institution": "German Aerospace Center",
+      "course": "Particle Image Velocimetry"
+    }
+  ],
+  "freeTimeActivities": [
+    "Cycling",
+    "hiking",
+    "statistics"
+  ],
+  "publications": [
+    {
+      "authors": [
+        "Tiselj, I.",
+        "Kren, J.",
+        "Mikuž, B.",
+        "Nop, R.",
+        "Burlot, A.",
+        "Hamrit, G."
+      ],
+      "year": 2024,
+      "title": "Experimental and numerical study of Taylor bubble in counter-current turbulent flow",
+      "journal": "Arabian Journal for Science and Engineering",
+      "volume": "49",
+      "pages": "1-18",
+      "doi": "https://doi.org/10.1007/s13369-024-09489-2"
+    },
+    {
+      "authors": [
+        "Kren, J.",
+        "Mikuž, B.",
+        "Tiselj, I."
+      ],
+      "year": 2024,
+      "title": "DNS vs. LES: Turbulent flow in square duct with heated foil boundary",
+      "journal": "International Journal of Heat and Fluid Flow",
+      "volume": "107",
+      "pages": "109403",
+      "doi": "https://doi.org/10.1016/j.ijheatfluidflow.2024.109403"
+    },
+    {
+      "authors": [
+        "Kren, J.",
+        "Frederix, E. M. A.",
+        "Tiselj, I.",
+        "Mikuž, B."
+      ],
+      "year": 2024,
+      "title": "Numerical study of Taylor bubble breakup in counter-current flow using large eddy simulation",
+      "journal": "Physics of Fluids",
+      "volume": "36",
+      "pages": "023311-1-023311-18",
+      "doi": "https://doi.org/10.1063/5.0186236"
+    },
+    {
+      "authors": [
+        "Sharma, M.",
+        "Tiselj, I.",
+        "Kren, J.",
+        "Mikuž, B.",
+        "Cizelj, L."
+      ],
+      "year": 2023,
+      "title": "Thermal streak spacing in fully developed duct flow with different Reynolds and Prandtl numbers",
+      "journal": "Heat and Mass Transfer",
+      "volume": "59(11)",
+      "pages": "2105-2116",
+      "doi": "https://doi.org/10.1007/s00231-023-03399-z"
+    },
+    {
+      "authors": [
+        "Kren, J.",
+        "Zajec, B.",
+        "Tiselj, I.",
+        "El Shawish, S.",
+        "Perne, Ž.",
+        "Tekavčič, M.",
+        "Mikuž, B."
+      ],
+      "year": 2023,
+      "title": "Dynamics of Taylor bubble interface in vertical turbulent counter-current flow",
+      "journal": "International Journal of Multiphase Flow",
+      "volume": "165",
+      "pages": "104482-1-104482-20",
+      "doi": "https://doi.org/10.1016/j.ijmultiphaseflow.2023.104482"
+    },
+    {
+      "authors": [
+        "Zajec, B.",
+        "Matkovič, M.",
+        "Kosanič, N.",
+        "Oder, J.",
+        "Mikuž, B.",
+        "Kren, J.",
+        "Tiselj, I."
+      ],
+      "year": 2021,
+      "title": "Turbulent flow over confined backward-facing step: PIV vs. DNS",
+      "journal": "Applied Sciences",
+      "volume": "11(22)",
+      "pages": "10582-1-10582-20",
+      "doi": "https://doi.org/10.3390/app112210582"
+    },
+    {
+      "authors": [
+        "Tiselj, I.",
+        "Sharma, M.",
+        "Zajec, B.",
+        "Veljanovski, N.",
+        "Kren, J.",
+        "Cizelj, L.",
+        "Mikuž, B."
+      ],
+      "year": 2021,
+      "title": "Investigation of turbulent flow in square duct with heated foil thermometry",
+      "journal": "International Journal of Heat and Mass Transfer",
+      "volume": "175",
+      "pages": "121381-1-121381-14",
+      "doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2021.121381"
     }
   ]
 }
