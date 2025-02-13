@@ -340,8 +340,17 @@ external_links:
   enabled: true
   rel: external nofollow noopener
   target: _blank
-  exclude:
-
+  excludes:
+    - _news/announcement_*.md
+    - _pages/blog.md
+    - _posts/
+    - _projects/4_project.md
+    - _projects/5_project.md
+    - _projects/6_project.md
+    - _projects/7_project.md
+    - _projects/8_project.md
+    - _projects/9_project.md
+    - assets/jupyter/blog.ipynb
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
 # -----------------------------------------------------------------------------
