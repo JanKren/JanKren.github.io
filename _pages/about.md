@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Affiliations</a>. Postdoctoral researcher at CFD group, LSM, Paul Scherrer Institute, Switzerland.
 
 profile:
   align: right
