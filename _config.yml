@@ -204,7 +204,7 @@ exclude:
   - _pages/repositories.md
   - _pages/teaching.md
   - _pages/news.md
-  - _projects/9_project.md
+  - _pages/profiles.md
 
 
 keep_files:
