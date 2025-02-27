@@ -194,7 +194,6 @@ exclude:
   - vendor
   - _pages/blog.md
   - _posts/
-  - _projects/3_project.md
   - _projects/4_project.md
   - _projects/5_project.md
   - _projects/6_project.md

@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Dynamics of a Taylor bubble in a counter-current flow
+description: Dynamics of a Taylor bubble in a counter-current flow
 img: assets/img/3.jpg
-importance: 2
+importance: 1
 category: work
 giscus_comments: true
 ---
