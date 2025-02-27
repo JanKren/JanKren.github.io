@@ -89,11 +89,16 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-dynamics-of-a-taylor-bubble-in-a-counter-current-flow",
+          title: 'Dynamics of a Taylor bubble in a counter-current flow',
+          description: "Dynamics of a Taylor bubble in a counter-current flow",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-brava-boiling-flow-in-realistic-fuel-assemblies",
+          title: 'BRAVA - Boiling flow in Realistic fuel Assemblies',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{
         id: 'social-email',
         title: 'email',
