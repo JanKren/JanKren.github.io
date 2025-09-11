@@ -5,6 +5,7 @@ description: Dynamics of a Taylor bubble in a counter-current flow
 img: assets/img/3.jpg
 importance: 1
 category: work
+status: Finished
 giscus_comments: true
 ---
 
