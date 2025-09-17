@@ -1,82 +1,73 @@
 ---
 layout: page
-title: BRAVA - Boiling flow in Realistic fuel Assemblies
-description: a project that redirects to another website
+title: Interface Tracking Algorithms for Multiphase Flow Analysis
+description: Development of advanced algorithms for large interface tracking in air-water slug flows
 img: assets/img/7.jpg
-redirect: https://unsplash.com
 importance: 3
-status: Ongoing
+status: Completed
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project focuses on developing sophisticated image processing and interface tracking algorithms for analyzing two-phase flow experiments. The work addresses the challenge of automatically classifying and tracking gas-liquid interfaces in high-speed experimental data, providing essential tools for validation of computational fluid dynamics simulations.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Background
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Two-phase flow experiments generate vast amounts of data that require automated classification and analysis. Traditional manual analysis methods are time-consuming and subject to human error. This project developed robust algorithms to differentiate between liquid and gas phases while tracking interface dynamics with high precision.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Algorithm Development
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Large Interface Tracking
+- **High-sensitivity detection** of bubble interfaces from experimental images
+- **Automated phase classification** for liquid and gas regions
+- **Temporal tracking** of interface evolution in turbulent flows
+- **Statistical analysis** of interface characteristics and dynamics
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+### Key Innovations
+- **Robust edge detection** algorithms capable of handling noise and lighting variations
+- **Multi-frame analysis** for tracking interface motion and deformation
+- **Automated quality control** to identify and flag problematic data
+- **Integration capabilities** with CFD simulation data for validation
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Applications and Results
 
-{% raw %}
+### Experimental Support
+The algorithms were successfully applied to analyze air-water slug flow experiments, providing:
+- **Quantitative interface velocities** and acceleration measurements
+- **Bubble size distributions** and shape characterization
+- **Interface roughness analysis** for surface tension studies
+- **Flow regime identification** based on interface characteristics
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+### CFD Validation
+The processed experimental data enabled detailed validation of computational simulations:
+- **Direct comparison** between experimental and simulated bubble shapes
+- **Interface dynamics verification** for numerical model assessment
+- **Quantitative metrics** for simulation accuracy evaluation
 
-{% endraw %}
+## Technical Implementation
+
+### Image Processing Pipeline
+- **Preprocessing**: Noise reduction and contrast enhancement
+- **Segmentation**: Advanced thresholding and region growing algorithms
+- **Feature Extraction**: Geometric and dynamic interface properties
+- **Post-processing**: Statistical analysis and quality assurance
+
+### Performance Characteristics
+- **High throughput**: Capable of processing thousands of images per hour
+- **Accuracy**: Sub-pixel interface detection precision
+- **Robustness**: Handles varying lighting and optical conditions
+- **Scalability**: Adaptable to different experimental configurations
+
+## Impact and Applications
+
+This work supports:
+- **Experimental fluid dynamics** by providing automated analysis tools
+- **CFD validation studies** through precise interface measurements
+- **Flow regime mapping** for industrial applications
+- **Algorithm development** for multiphase flow research
+
+The algorithms have been utilized in multiple research projects, significantly reducing analysis time while improving measurement accuracy and consistency.
+
+## Publications
+
+{% cite krenLargeInterfaceTracking2021 %}
+{% cite zajecTurbulentFlowConfined2021 %}

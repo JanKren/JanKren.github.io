@@ -1,81 +1,53 @@
 ---
 layout: page
-title: Turbulent heat transfer in a channel using advanced experimental and computational methods
-description: with background image
-img: assets/img/12.jpg
-importance: 3
+title: Taylor Bubble Dynamics in Counter-Current Turbulent Flow
+description: Advanced numerical investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods
+img: assets/img/1.jpg
+importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This research investigates the complex dynamics of Taylor bubbles in vertical counter-current turbulent flows using advanced computational fluid dynamics techniques. The work combines high-fidelity Large Eddy Simulation (LES) with experimental validation to understand bubble breakup mechanisms and interface behavior.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Taylor bubbles are large gas structures that form in vertical pipes during slug flow regimes. Understanding their behavior in counter-current flow is crucial for nuclear reactor safety, particularly in emergency core cooling scenarios. This project developed novel numerical methods to capture the intricate physics of bubble-liquid interactions.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Key Findings
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Bubble Shape Evolution
+Our simulations revealed distinct bubble morphologies depending on flow conditions:
+- **Transitional flow (Re = 1400)**: Axisymmetric, bullet-train shapes
+- **Turbulent flow (Re = 5600)**: Asymmetric deformation with pronounced wake structures
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+### Secondary Vortex Discovery
+A novel finding from our high-resolution simulations was the identification of **secondary vortex formation** in the turbulent wake region behind Taylor bubbles. This phenomenon becomes prominent at finer mesh resolutions and represents a new contribution to understanding counter-current flow physics.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### Interface Wave Dynamics
+Advanced interface tracking algorithms captured microscale disturbance waves along bubble interfaces with amplitudes ranging from 10-100 μm. These waves exhibit correlated movement patterns across the bubble surface, providing new insights into surface tension effects in turbulent flows.
 
-{% raw %}
+## Computational Methods
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+### Numerical Framework
+- **Solver**: Modified OpenFOAM with enhanced VOF capabilities
+- **Time Integration**: High-order Diagonally Implicit Runge-Kutta (DIRK) schemes
+- **Interface Reconstruction**: Piecewise Linear Interface Calculation (PLIC) method
+- **Turbulence Modeling**: Wall-Adapting Local Eddy-viscosity (WALE) model
 
-{% endraw %}
+### Method Comparison
+Systematic comparison between algebraic and geometric interface capturing techniques demonstrated the **superior accuracy of geometric reconstruction** for bubble breakup prediction, particularly in transitional flow regimes.
+
+## Impact and Applications
+
+This research directly supports:
+- **Nuclear reactor safety analysis** for emergency cooling scenarios
+- **Multiphase flow prediction** in vertical pipes and channels
+- **Interface tracking method development** for complex geometries
+- **Understanding of turbulent wake structures** in multiphase systems
+
+## Publications
+
+{% cite krenNumericalStudyTaylor2024 %}
+{% cite krenDynamicsTaylorBubble2023 %}
+{% cite tiseljExperimentalNumericalStudy2024 %}
