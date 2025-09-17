@@ -2,7 +2,7 @@
 layout: page
 title: Taylor Bubble Dynamics in Counter-Current Turbulent Flow
 description: Advanced numerical investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods
-img: assets/img/1.jpg
+img: assets/img/publication_preview/TaylorExp.jpg
 importance: 1
 category: work
 status: Finished
@@ -27,6 +27,15 @@ A novel finding from our high-resolution simulations was the identification of *
 
 ### Interface Wave Dynamics
 Advanced interface tracking algorithms captured microscale disturbance waves along bubble interfaces with amplitudes ranging from 10-100 μm. These waves exhibit correlated movement patterns across the bubble surface, providing new insights into surface tension effects in turbulent flows.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/publication_preview/TaylorSim.jpeg" title="Experimental Taylor bubble interface waves" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Experimental visualization of Taylor bubble interface showing microscale wave dynamics in counter-current turbulent flow
+</div>
 
 ## Computational Methods
 

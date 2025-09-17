@@ -2,7 +2,7 @@
 layout: page
 title: BRAVA - Boiling Flow CFD for Nuclear Fuel Assemblies
 description: Development of T-Flows and advanced CFD approaches for boiling simulations in Swiss NPP fuel assembly geometries
-img: assets/img/2.jpg
+img: assets/img/publication_preview/BRAVA.png
 importance: 4
 category: work
 status: Ongoing

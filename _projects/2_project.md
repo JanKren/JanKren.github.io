@@ -2,7 +2,7 @@
 layout: page
 title: DNS vs. LES for Nuclear Thermal Hydraulics
 description: Comparative analysis of turbulent heat transfer in square duct with heated foil boundary conditions
-img: assets/img/3.jpg
+img: assets/img/publication_preview/DNSLESCoherent.jpg
 importance: 2
 category: work
 status: Finished
@@ -40,6 +40,15 @@ The research provided quantitative assessment of computational resource requirem
 - **Approach**: Passive scalar approximation for thermal transport
 - **Boundary Conditions**: Constant heat flux at heated foil section
 - **Reynolds Number**: 10,000 (fully developed turbulent flow)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/publication_preview/DNSLESGeometry.png" title="DNS vs LES computational geometry" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Computational geometry showing square duct configuration with heated foil boundary section for DNS vs LES comparison
+</div>
 
 ### Comparative Framework
 - **DNS**: High-resolution reference solution capturing all turbulent scales
