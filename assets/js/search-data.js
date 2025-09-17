@@ -80,7 +80,7 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-brava-boiling-flow-cfd-for-nuclear-fuel-assemblies",
           title: 'BRAVA - Boiling Flow CFD for Nuclear Fuel Assemblies',
-          description: "Development of T-Flows and advanced CFD approaches for boiling simulations in Swiss NPP fuel assembly geometries",
+          description: "CFD simulation development for boiling flows in nuclear fuel assemblies",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{
