@@ -78,6 +78,11 @@ ninja.data = [{
           description: "Development of advanced algorithms for large interface tracking in air-water slug flows",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
+            },},{id: "projects-brava-boiling-flow-cfd-for-nuclear-fuel-assemblies",
+          title: 'BRAVA - Boiling Flow CFD for Nuclear Fuel Assemblies',
+          description: "Development of T-Flows and advanced CFD approaches for boiling simulations in Swiss NPP fuel assembly geometries",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
             },},{
         id: 'social-email',
         title: 'email',
