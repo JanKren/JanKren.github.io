@@ -63,19 +63,19 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-turbulent-heat-transfer-in-a-channel-using-advanced-experimental-and-computational-methods",
-          title: 'Turbulent heat transfer in a channel using advanced experimental and computational methods',
-          description: "with background image",
+          section: "News",},{id: "projects-taylor-bubble-dynamics-in-counter-current-turbulent-flow",
+          title: 'Taylor Bubble Dynamics in Counter-Current Turbulent Flow',
+          description: "Advanced numerical investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-dynamics-of-a-taylor-bubble-in-a-counter-current-flow",
-          title: 'Dynamics of a Taylor bubble in a counter-current flow',
-          description: "Dynamics of a Taylor bubble in a counter-current flow",
+            },},{id: "projects-dns-vs-les-for-nuclear-thermal-hydraulics",
+          title: 'DNS vs. LES for Nuclear Thermal Hydraulics',
+          description: "Comparative analysis of turbulent heat transfer in square duct with heated foil boundary conditions",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-brava-boiling-flow-in-realistic-fuel-assemblies",
-          title: 'BRAVA - Boiling flow in Realistic fuel Assemblies',
-          description: "a project that redirects to another website",
+            },},{id: "projects-interface-tracking-algorithms-for-multiphase-flow-analysis",
+          title: 'Interface Tracking Algorithms for Multiphase Flow Analysis',
+          description: "Development of advanced algorithms for large interface tracking in air-water slug flows",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{
