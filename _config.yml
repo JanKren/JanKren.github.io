@@ -11,9 +11,7 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
  Postdoctoral researcher at Laboratory for Simulation and Modelling, Paul Scherrer Institute, Switzerland. Interested in multiphase flow simulations, especially gas-liquid flow simulations with turbulence and phase change with open source solvers (OpenFOAM, T-Flows).
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+  Researcher in computational fluid dynamics and multiphase flows.
 keywords: computational fluid dynamics, multiphase flows, Taylor bubbles, OpenFOAM, T-Flows, nuclear thermal hydraulics, boiling, phase change, turbulence, LES, DNS # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -49,7 +47,7 @@ rss_icon: true
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 bib_search: true
@@ -194,12 +192,6 @@ exclude:
   - vendor
   - _pages/blog.md
   - _posts/
-  - _projects/4_project.md
-  - _projects/5_project.md
-  - _projects/6_project.md
-  - _projects/7_project.md
-  - _projects/8_project.md
-  - _projects/9_project.md
   - _pages/repositories.md
   - _pages/teaching.md
   - _pages/news.md

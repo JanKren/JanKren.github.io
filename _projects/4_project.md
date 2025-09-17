@@ -1,80 +1,100 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: BRAVA - Boiling Flow CFD for Nuclear Fuel Assemblies
+description: Development of T-Flows and advanced CFD approaches for boiling simulations in Swiss NPP fuel assembly geometries
+img: assets/img/2.jpg
+importance: 4
+category: work
+status: Ongoing
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The BRAVA project focuses on developing advanced CFD simulation capabilities for boiling flows in Fuel Assemblies (FAs), particularly those used in Swiss Nuclear Power Plants. This SwissNuclear-sponsored research addresses critical safety analysis needs by advancing computational methods for nuclear thermal hydraulics.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Project Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+CFD simulations for boiling flow in Fuel Assemblies are essential for detecting potential operational problems in nuclear reactors. The BRAVA project develops and validates multiple computational approaches to address the complex multi-scale nature of boiling phenomena in nuclear fuel geometries.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Computational Approaches
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Three-Pronged CFD Strategy
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**1. Interface Tracking Method (ITM)**
+- Implemented in PSI-BOIL and T-Flows codes
+- Rigorous calculation of boiling phenomena through direct interface resolution
+- High-fidelity simulation of liquid-vapor interface dynamics
+- Limited to smaller domains due to computational requirements
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**2. Lattice Boltzmann Method (LBM)**
+- Direct resolution of liquid-vapor interfaces
+- Kinetic theory-based approach for multiphase flows
+- Capable of capturing complex interfacial phenomena
+- High computational resolution requirements
 
-{% raw %}
+**3. Eulerian Approach (EA)**
+- Space and time-averaged void fraction predictions
+- Capable of simulating entire fuel assemblies
+- Computationally efficient for full-scale simulations
+- Enhanced with CTU-PSI model development
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## Key Innovations
 
-{% endraw %}
+### Population Balance Model Integration
+A novel population balance model is being integrated into the Eulerian framework:
+- **Statistical representation** of multiphase flow characteristics
+- **Bubble lifecycle tracking**: birth, growth, and death rates
+- **Liquid/vapor ratio monitoring** throughout the domain
+- **Reduced computational overhead** compared to direct bubble resolution
+
+### Machine Learning Enhancement
+- **Model parameterization** using ML techniques
+- **Sensitivity analysis** for parameter optimization
+- **Automated calibration** of Eulerian model parameters
+- **Data-driven validation** against experimental benchmarks
+
+## Validation Framework
+
+### Benchmark Test Cases
+- **DEBORA benchmark**: Initial validation for heated pipe boiling flows
+- **Fuel bundle configurations**: 2×2 and 3×3 bundle geometries
+- **Full-scale validation**: BFBT/PSBT fuel assemblies
+- **Operating conditions**: Realistic NPP operational parameters
+
+### Multi-Scale Validation Strategy
+- **Full FA simulations**: Optimized model parameters for entire assemblies
+- **High-resolution studies**: Detailed analysis of critical FA regions
+- **Cross-validation**: Comparison between ITM, LBM, and EA approaches
+
+## Industrial Applications
+
+### Swiss NPP Support
+- **Safety analysis enhancement** for Swiss nuclear facilities
+- **Operational parameter optimization** for existing reactors
+- **Design support** for fuel assembly modifications
+- **Regulatory compliance** through validated simulation tools
+
+### Code Development
+- **T-Flows enhancement** for nuclear applications
+- **PSI-BOIL integration** with fuel assembly geometries
+- **Open-source contributions** to nuclear CFD community
+- **Industrial deployment** of validated simulation tools
+
+## Research Impact
+
+The BRAVA project addresses critical gaps in nuclear thermal hydraulics simulation:
+- **Multi-scale modeling** from microbubbles to full assemblies
+- **Computational efficiency** for industrial applications
+- **Validation benchmarks** for nuclear CFD codes
+- **SwissNuclear collaboration** ensuring industrial relevance
+
+## Future Directions
+
+- **Extended validation** across diverse fuel assembly designs
+- **Real-time simulation capabilities** for operational support
+- **Machine learning acceleration** of computational models
+- **Integration with reactor safety analysis** workflows
+
+## Funding and Collaboration
+
+**Sponsor**: SwissNuclear
+**Partners**: Paul Scherrer Institute, Czech Technical University
+**Industrial Focus**: Swiss Nuclear Power Plant applications

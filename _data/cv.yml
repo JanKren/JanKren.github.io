@@ -2,11 +2,9 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Jan Kren
     - name: Languages
-      value: English, German
+      value: English, Slovenian, German
 
 - title: Education
   type: time_table

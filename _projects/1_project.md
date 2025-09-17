@@ -5,6 +5,7 @@ description: Advanced numerical investigation of Taylor bubble breakup and inter
 img: assets/img/1.jpg
 importance: 1
 category: work
+status: Finished
 related_publications: true
 ---
 

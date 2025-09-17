@@ -4,7 +4,7 @@ title: Interface Tracking Algorithms for Multiphase Flow Analysis
 description: Development of advanced algorithms for large interface tracking in air-water slug flows
 img: assets/img/7.jpg
 importance: 3
-status: Completed
+status: Finished
 category: work
 ---
 
