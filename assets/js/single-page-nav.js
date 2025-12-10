@@ -61,4 +61,105 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initial call to set active nav item
   scrollSpy();
+
+  // Add animation to elements when they come into view
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all expertise items, contribution cards, and stat items
+  const animateElements = document.querySelectorAll(
+    '.expertise-item, .contribution-card, .stat-item, .impact-highlight, .current-focus'
+  );
+
+  animateElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    observer.observe(element);
+  });
+
+  // Add CSS for animations
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-item {
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: scale(1.1);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Add back to top button functionality
+  const backToTop = document.createElement('button');
+  backToTop.id = 'back-to-top';
+  backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  backToTop.style.display = 'none';
+  document.body.appendChild(backToTop);
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+      backToTop.style.opacity = '1';
+    } else {
+      backToTop.style.opacity = '0';
+      setTimeout(() => {
+        backToTop.style.display = 'none';
+      }, 300);
+    }
+  });
+
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Add progress indicator for long pages
+  const progressBar = document.createElement('div');
+  progressBar.id = 'reading-progress';
+  progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--global-theme-color);
+    width: 0%;
+    z-index: 10000;
+    transition: width 0.2s ease;
+  `;
+  document.body.appendChild(progressBar);
+
+  window.addEventListener('scroll', function() {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / scrollHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
 });
