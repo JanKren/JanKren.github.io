@@ -13,7 +13,7 @@ profile:
     <p>Paul Scherrer Institute</p>
     <p>Villigen, Switzerland</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # will be included in publications section below
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -66,3 +66,154 @@ My work supports nuclear reactor safety analysis through:
 My 2024 publications in *Physics of Fluids* and *International Journal of Heat and Fluid Flow* present advances in multiphase flow simulation. The work introduces computational approaches that bridge experimental observations with theoretical predictions.
 
 Currently, I am exploring boiling simulations from first principles using novel VOF and other numerical methods, with the end goal of accurate simulations for nuclear industry applications.
+
+---
+
+<section id="publications">
+
+## Publications
+
+{% include bib_search.liquid %}
+
+<div class="publications">
+{% bibliography %}
+</div>
+
+</section>
+
+---
+
+<section id="projects">
+
+## Projects
+
+<div class="projects">
+
+{%- assign statuses = "Ongoing|Finished|Future" | split:"|" -%}
+
+{%- for status in statuses -%}
+  {%- assign grouped = site.projects | where_exp: "p", "p.status == status" -%}
+  {%- if grouped and grouped.size > 0 -%}
+
+    <a id="{{ status | downcase }}" href=".#{{ status | downcase }}">
+      <h3 class="category">{{ status }}</h3>
+    </a>
+
+    {%- assign sorted_projects = grouped | sort: "importance" -%}
+
+    <div class="row row-cols-1 row-cols-md-3">
+      {%- for project in sorted_projects -%}
+        {%- include projects.liquid -%}
+      {%- endfor -%}
+    </div>
+
+  {%- endif -%}
+{%- endfor -%}
+
+</div>
+
+</section>
+
+---
+
+<section id="cv">
+
+## Curriculum Vitae
+
+<div class="cv">
+
+### Education
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    {% for education in site.data.resume.education %}
+      <tr>
+        <th scope="row">{{ education.startDate }} – {{ education.endDate }}</th>
+        <td>
+          <strong>{{ education.degree }}</strong>
+          <br />
+          {{ education.institution }}
+          {% if education.thesis %}
+            <div class="text-muted"><small>Thesis: {{ education.thesis }}</small></div>
+          {% endif %}
+          {% if education.supervisor %}
+            <div class="text-muted"><small>Supervisor: {{ education.supervisor }}</small></div>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+### Work Experience
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    {% for work in site.data.resume.work %}
+      <tr>
+        <th scope="row">{{ work.startDate }}{% if work.endDate != 'present' %} – {{ work.endDate }}{% else %} – present{% endif %}</th>
+        <td>
+          <strong>{{ work.position }}</strong>
+          <br />
+          {{ work.employer }}
+          {% if work.address %}
+            <div class="text-muted"><small>{{ work.address }}</small></div>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+### Skills
+{% for skill in site.data.resume.skills %}
+  <div class="mb-3">
+    <strong>{{ skill.category }}:</strong>
+    <span>{{ skill.keywords | join: ', ' }}</span>
+  </div>
+{% endfor %}
+
+### Awards & Recognition
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    {% for award in site.data.resume.awards %}
+      <tr>
+        <th scope="row">{{ award.year }}</th>
+        <td>
+          <strong>{{ award.title }}</strong>
+          {% if award.awarder %}
+            <br />
+            <span class="text-muted">{{ award.awarder }}</span>
+          {% endif %}
+          {% if award.location %}
+            <br />
+            <span class="text-muted">{{ award.location }}</span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+### Research Courses
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    {% for course in site.data.resume.researchCourses %}
+      <tr>
+        <th scope="row">{{ course.date }}</th>
+        <td>
+          <strong>{{ course.course }}</strong>
+          <br />
+          {% if course.institution %}{{ course.institution }}{% endif %}
+          {% if course.institutions %}{{ course.institutions | join: ', ' }}{% endif %}
+          <div class="text-muted"><small>{{ course.location }}</small></div>
+          {% if course.supervisor %}
+            <div class="text-muted"><small>Supervisor: {{ course.supervisor }}</small></div>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+</div>
+
+</section>

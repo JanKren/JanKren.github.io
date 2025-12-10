@@ -1,0 +1,87 @@
+---
+---
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
+
+// Section spacing
+section {
+  padding-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+// Navigation active state for sections
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+// Section anchors offset for fixed header
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+// Publications section styling
+#publications {
+  .publications {
+    margin-top: 2rem;
+  }
+}
+
+// Projects section styling
+#projects {
+  .projects {
+    margin-top: 2rem;
+  }
+
+  .category {
+    border-bottom: 2px solid var(--global-theme-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// CV section styling
+#cv {
+  .cv {
+    margin-top: 2rem;
+  }
+
+  .cv-placeholder {
+    text-align: center;
+    padding: 3rem;
+    background: var(--global-bg-color);
+    border: 1px dashed var(--global-text-color-light);
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+}
+
+// Section dividers
+hr {
+  margin: 4rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--global-theme-color), transparent);
+}
+
+// Back to top button styling (if enabled)
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--global-theme-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    background: var(--global-hover-color);
+  }
+}
