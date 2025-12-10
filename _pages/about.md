@@ -149,41 +149,6 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   <span class="divider-icon"><i class="fas fa-chevron-down"></i></span>
 </div>
 
-<section id="projects" class="main-section">
-
-## <i class="fas fa-project-diagram"></i> Projects
-
-<div class="projects">
-
-{%- assign statuses = "Ongoing|Finished|Future" | split:"|" -%}
-
-{%- for status in statuses -%}
-  {%- assign grouped = site.projects | where_exp: "p", "p.status == status" -%}
-  {%- if grouped and grouped.size > 0 -%}
-
-    <a id="{{ status | downcase }}" href=".#{{ status | downcase }}">
-      <h3 class="category">{{ status }}</h3>
-    </a>
-
-    {%- assign sorted_projects = grouped | sort: "importance" -%}
-
-    <div class="row row-cols-1 row-cols-md-3">
-      {%- for project in sorted_projects -%}
-        {%- include projects.liquid -%}
-      {%- endfor -%}
-    </div>
-
-  {%- endif -%}
-{%- endfor -%}
-
-</div>
-
-</section>
-
-<div class="section-divider">
-  <span class="divider-icon"><i class="fas fa-chevron-down"></i></span>
-</div>
-
 <section id="cv" class="main-section">
 
 ## <i class="fas fa-file-alt"></i> Curriculum Vitae
