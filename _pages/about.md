@@ -184,6 +184,9 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
           {% if education.thesis %}
             <div class="text-muted"><small>Thesis: {{ education.thesis }}</small></div>
           {% endif %}
+          {% if education.seminar %}
+            <div class="text-muted"><small>Seminar: {{ education.seminar }}</small></div>
+          {% endif %}
           {% if education.supervisor %}
             <div class="text-muted"><small>Supervisor: {{ education.supervisor }}</small></div>
           {% endif %}
