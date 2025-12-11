@@ -33,7 +33,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <div class="quick-stats">
   <div class="stat-item">
-    <span class="stat-number">7+</span>
+    <span class="stat-number">10+</span>
     <span class="stat-label">Publications</span>
   </div>
   <div class="stat-item">
