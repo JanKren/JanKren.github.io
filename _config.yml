@@ -14,7 +14,7 @@ footer_text: >
   Researcher in computational fluid dynamics and multiphase flows.
 keywords: computational fluid dynamics, multiphase flows, Taylor bubbles, OpenFOAM, T-Flows, nuclear thermal hydraulics, boiling, phase change, turbulence, LES, DNS # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: bubble-favicon.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://JanKren.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
