@@ -121,6 +121,18 @@ document.addEventListener('DOMContentLoaded', function() {
   backToTop.id = 'back-to-top';
   backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
   backToTop.style.display = 'none';
+  backToTop.style.position = 'fixed';
+  backToTop.style.bottom = '90px'; // Above the social bar
+  backToTop.style.right = '20px';
+  backToTop.style.backgroundColor = 'var(--global-theme-color)';
+  backToTop.style.color = 'white';
+  backToTop.style.border = 'none';
+  backToTop.style.borderRadius = '50%';
+  backToTop.style.width = '50px';
+  backToTop.style.height = '50px';
+  backToTop.style.cursor = 'pointer';
+  backToTop.style.zIndex = '1000';
+  backToTop.style.transition = 'all 0.3s ease';
   document.body.appendChild(backToTop);
 
   window.addEventListener('scroll', function() {

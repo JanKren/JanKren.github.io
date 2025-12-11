@@ -67,20 +67,25 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
 </div>
+
+<!-- Fixed social bar at bottom -->
+{% if page.social %}
+<div class="fixed-social-bar">
+  <div class="fixed-social-content">
+    <div class="social-label">Connect:</div>
+    <div class="fixed-contact-icons">{% include social.liquid %}</div>
+    {% if site.contact_note %}
+      <div class="social-note">{{ site.contact_note }}</div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
 
 <!-- Include single page navigation JavaScript -->
 <script src="{{ '/assets/js/single-page-nav.js' | relative_url }}"></script>
