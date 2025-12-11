@@ -48,7 +48,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <section class="content-section">
 
-## <i class="fas fa-microscope"></i> Research Expertise
+<h2><i class="fas fa-microscope"></i> Research Expertise</h2>
 
 <p class="section-intro">My work combines computational methods with experimental validation to understand complex fluid dynamics phenomena. I specialize in:</p>
 
@@ -89,7 +89,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <section class="content-section">
 
-## <i class="fas fa-trophy"></i> Key Contributions
+<h2><i class="fas fa-trophy"></i> Key Contributions</h2>
 
 <div class="contribution-card">
   <h3><i class="fas fa-flask"></i> Taylor Bubble Research</h3>
@@ -126,7 +126,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <section class="content-section">
 
-## <i class="fas fa-chart-line"></i> Recent Impact
+<h2><i class="fas fa-chart-line"></i> Recent Impact</h2>
 
 <div class="impact-section">
   <div class="impact-highlight">
@@ -151,7 +151,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <section id="publications" class="main-section">
 
-## <i class="fas fa-book"></i> Publications
+<h2><i class="fas fa-book"></i> Publications</h2>
 
 {% include bib_search.liquid %}
 
@@ -167,11 +167,11 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <section id="cv" class="main-section">
 
-## <i class="fas fa-file-alt"></i> Curriculum Vitae
+<h2><i class="fas fa-file-alt"></i> Curriculum Vitae</h2>
 
 <div class="cv">
 
-### <i class="fas fa-university"></i> Education
+<h3><i class="fas fa-university"></i> Education</h3>
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for education in site.data.resume.education %}
@@ -193,7 +193,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### <i class="fas fa-briefcase"></i> Work Experience
+<h3><i class="fas fa-briefcase"></i> Work Experience</h3>
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for work in site.data.resume.work %}
@@ -212,7 +212,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### <i class="fas fa-cogs"></i> Skills
+<h3><i class="fas fa-cogs"></i> Skills</h3>
 <div class="skills-container">
 {% for skill in site.data.resume.skills %}
   <div class="skill-category">
@@ -226,7 +226,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 {% endfor %}
 </div>
 
-### <i class="fas fa-trophy"></i> Awards & Recognition
+<h3><i class="fas fa-trophy"></i> Awards & Recognition</h3>
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for award in site.data.resume.awards %}
@@ -248,7 +248,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### <i class="fas fa-graduation-cap"></i> Research Courses & Training
+<h3><i class="fas fa-graduation-cap"></i> Research Courses & Training</h3>
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for course in site.data.resume.researchCourses %}
