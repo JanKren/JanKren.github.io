@@ -127,6 +127,10 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
     <h4><i class="fas fa-bullseye"></i> Current Focus</h4>
     <p>Currently, I am exploring boiling simulations from first principles using novel VOF and other numerical methods, with the end goal of accurate simulations for nuclear industry applications.</p>
   </div>
+  <div class="collaboration-note">
+    <h4><i class="fas fa-handshake"></i> Open for Collaboration</h4>
+    <p>I am actively seeking collaboration opportunities in computational fluid dynamics, multiphase flow modeling, and nuclear thermal hydraulics. Please feel free to reach out to discuss potential research partnerships or joint projects.</p>
+  </div>
 </div>
 
 <div class="section-divider">
@@ -210,7 +214,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 {% endfor %}
 </div>
 
-### Awards & Recognition
+### <i class="fas fa-trophy"></i> Awards & Recognition
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for award in site.data.resume.awards %}
@@ -232,7 +236,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### Research Courses
+### <i class="fas fa-graduation-cap"></i> Research Courses & Training
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for course in site.data.resume.researchCourses %}
