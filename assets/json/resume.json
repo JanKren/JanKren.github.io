@@ -110,7 +110,7 @@
       "keywords": [
         "Python (Advanced)",
         "C++ (Advanced)",
-        "Fortran (Basic)",
+        "Fortran (Advanced)",
         "Matlab (Advanced)",
         "Git"
       ]
@@ -140,6 +140,12 @@
     }
   ],
   "awards": [
+    {
+      "year": "2024",
+      "title": "Science Slam Top 5 Finalist",
+      "awarder": "ETSON (European Technical Safety Organisations Network)",
+      "location": "Vienna, Austria"
+    },
     {
       "year": "2024",
       "title": "Best young author paper at the conference 'Nuclear Energy for New Europe – NENE2024'",
