@@ -9,60 +9,23 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-      
-        title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-        
-      },
-    },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-      
-        title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
-        
-      },
-    },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "projects-taylor-bubble-dynamics-in-counter-current-turbulent-flow",
-          title: 'Taylor Bubble Dynamics in Counter-Current Turbulent Flow',
-          description: "Advanced numerical investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-dns-vs-les-for-nuclear-thermal-hydraulics",
-          title: 'DNS vs. LES for Nuclear Thermal Hydraulics',
-          description: "Comparative analysis of turbulent heat transfer in square duct with heated foil boundary conditions",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-interface-tracking-algorithms-for-multiphase-flow-analysis",
-          title: 'Interface Tracking Algorithms for Multiphase Flow Analysis',
-          description: "Development of advanced algorithms for large interface tracking in air-water slug flows",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-brava-boiling-flow-cfd-for-nuclear-fuel-assemblies",
-          title: 'BRAVA - Boiling Flow CFD for Nuclear Fuel Assemblies',
-          description: "CFD simulation development for boiling flows in nuclear fuel assemblies",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{
+  },// Add section navigation for single-page layout
+  {
+    id: "nav-publications",
+    title: "Publications",
+    section: "Sections",
+    handler: () => {
+      window.location.href = "/#publications";
+    },
+  },
+  {
+    id: "nav-cv",
+    title: "Curriculum Vitae",
+    section: "Sections",
+    handler: () => {
+      window.location.href = "/#cv";
+    },
+  },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
