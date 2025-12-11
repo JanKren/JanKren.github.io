@@ -245,8 +245,8 @@ html {
   50% { transform: translateY(5px); }
 }
 
-// Main sections
-.main-section {
+// Main sections and content sections
+.main-section, .content-section {
   padding-top: 3rem;
   margin-bottom: 3rem;
 
@@ -272,6 +272,10 @@ html {
       background: var(--global-theme-color);
     }
   }
+}
+
+.content-section {
+  padding-top: 2rem;
 }
 
 // Section spacing
@@ -374,10 +378,40 @@ section[id] {
     margin-top: 2rem;
 
     h3 {
-      color: var(--global-theme-color);
+      color: var(--global-text-color) !important;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      font-size: 1.3rem;
+      font-size: 1.3rem !important;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 0.5rem;
+
+      i {
+        color: var(--global-theme-color);
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: var(--global-theme-color);
+      }
+    }
+  }
+
+  // Ensure all h3 elements in cv section get styled
+  h3 {
+    color: var(--global-text-color) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600;
+
+    i {
+      color: var(--global-theme-color);
     }
   }
 

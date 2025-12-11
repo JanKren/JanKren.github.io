@@ -46,6 +46,8 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </div>
 </div>
 
+<section class="content-section">
+
 ## <i class="fas fa-microscope"></i> Research Expertise
 
 <p class="section-intro">My work combines computational methods with experimental validation to understand complex fluid dynamics phenomena. I specialize in:</p>
@@ -83,6 +85,10 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </div>
 </div>
 
+</section>
+
+<section class="content-section">
+
 ## <i class="fas fa-trophy"></i> Key Contributions
 
 <div class="contribution-card">
@@ -116,6 +122,10 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </ul>
 </div>
 
+</section>
+
+<section class="content-section">
+
 ## <i class="fas fa-chart-line"></i> Recent Impact
 
 <div class="impact-section">
@@ -132,6 +142,8 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
     <p>I am actively seeking collaboration opportunities in computational fluid dynamics, multiphase flow modeling, and nuclear thermal hydraulics. Please feel free to reach out to discuss potential research partnerships or joint projects.</p>
   </div>
 </div>
+
+</section>
 
 <div class="section-divider">
   <span class="divider-icon"><i class="fas fa-chevron-down"></i></span>
@@ -159,7 +171,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <div class="cv">
 
-### Education
+### <i class="fas fa-university"></i> Education
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for education in site.data.resume.education %}
@@ -181,7 +193,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### Work Experience
+### <i class="fas fa-briefcase"></i> Work Experience
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     {% for work in site.data.resume.work %}
@@ -200,7 +212,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </table>
 </div>
 
-### Skills
+### <i class="fas fa-cogs"></i> Skills
 <div class="skills-container">
 {% for skill in site.data.resume.skills %}
   <div class="skill-category">
