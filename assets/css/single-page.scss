@@ -417,6 +417,25 @@ section[id] {
   }
 }
 
+// Header name and title styling
+.navbar-brand {
+  .text-muted {
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+
+    .small {
+      display: none; // Hide researcher and fluid dynamics on mobile
+    }
+
+    .mx-2 {
+      display: none; // Hide separators on mobile
+    }
+  }
+}
+
 // Responsive design
 @media (max-width: 768px) {
   .quick-stats {
