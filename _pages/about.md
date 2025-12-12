@@ -175,61 +175,6 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
       </div>
     </div>
   </div>
-
-  <div class="research-topics">
-    <h3><i class="fas fa-lightbulb"></i> Potential Research Topics</h3>
-    <p>I offer supervision in my areas of expertise, including but not limited to:</p>
-
-    <div class="topic-grid">
-      <div class="topic-item">
-        <i class="fas fa-water"></i>
-        <h5>Taylor Bubble Dynamics</h5>
-        <p>Investigate bubble behavior in vertical pipes, interface instabilities, and breakup phenomena using CFD simulations.</p>
-      </div>
-
-      <div class="topic-item">
-        <i class="fas fa-wind"></i>
-        <h5>Turbulence Modeling</h5>
-        <p>Apply and validate LES and DNS approaches for complex turbulent multiphase flows using OpenFOAM or similar tools.</p>
-      </div>
-
-      <div class="topic-item">
-        <i class="fas fa-temperature-high"></i>
-        <h5>Boiling & Phase Change</h5>
-        <p>Simulate boiling phenomena and phase change processes relevant to nuclear reactor cooling systems.</p>
-      </div>
-
-      <div class="topic-item">
-        <i class="fas fa-code"></i>
-        <h5>Numerical Methods</h5>
-        <p>Develop and implement advanced interface tracking methods, VOF improvements, or coupling algorithms.</p>
-      </div>
-
-      <div class="topic-item">
-        <i class="fas fa-atom"></i>
-        <h5>Nuclear Thermal Hydraulics</h5>
-        <p>Study heat transfer and fluid flow in reactor components, safety systems, and cooling circuits.</p>
-      </div>
-
-      <div class="topic-item">
-        <i class="fas fa-server"></i>
-        <h5>HPC & Optimization</h5>
-        <p>Optimize CFD codes for high-performance computing, implement parallel algorithms, or develop post-processing tools.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="teaching-contact">
-    <h3><i class="fas fa-envelope"></i> Get in Touch</h3>
-    <p>If you're a student interested in working on cutting-edge multiphase flow research, I encourage you to contact me. Please include:</p>
-    <ul>
-      <li>Your academic background and current program</li>
-      <li>Research interests and why they align with my expertise</li>
-      <li>Preferred project duration and timeline</li>
-      <li>Any relevant coursework or experience in fluid dynamics/CFD</li>
-    </ul>
-    <p><strong>Note:</strong> Projects can be tailored to match your interests and skill level. Both computational and theoretical approaches are welcome.</p>
-  </div>
 </div>
 
 </section>
