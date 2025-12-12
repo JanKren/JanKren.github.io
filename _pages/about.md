@@ -149,6 +149,95 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   <span class="divider-icon"><i class="fas fa-chevron-down"></i></span>
 </div>
 
+<section id="teaching" class="main-section">
+
+<h2><i class="fas fa-graduation-cap"></i> Teaching & Supervision</h2>
+
+<div class="teaching-section">
+  <div class="supervision-opportunity">
+    <h3><i class="fas fa-users"></i> Open for Student Supervision</h3>
+    <p>I am available to co-supervise motivated students at various levels. If you're interested in computational fluid dynamics and multiphase flow research, please reach out to discuss potential projects.</p>
+
+    <div class="supervision-grid">
+      <div class="supervision-card">
+        <h4><i class="fas fa-user-graduate"></i> Semester Projects</h4>
+        <p>Short-term research projects focusing on specific aspects of multiphase flow simulations or data analysis.</p>
+      </div>
+
+      <div class="supervision-card">
+        <h4><i class="fas fa-book"></i> BSc Thesis</h4>
+        <p>Bachelor thesis projects introducing students to computational methods in fluid dynamics and basic multiphase flow phenomena.</p>
+      </div>
+
+      <div class="supervision-card">
+        <h4><i class="fas fa-microscope"></i> MSc Thesis</h4>
+        <p>Master thesis projects involving advanced numerical simulations and in-depth analysis of complex flow phenomena.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-topics">
+    <h3><i class="fas fa-lightbulb"></i> Potential Research Topics</h3>
+    <p>I offer supervision in my areas of expertise, including but not limited to:</p>
+
+    <div class="topic-grid">
+      <div class="topic-item">
+        <i class="fas fa-water"></i>
+        <h5>Taylor Bubble Dynamics</h5>
+        <p>Investigate bubble behavior in vertical pipes, interface instabilities, and breakup phenomena using CFD simulations.</p>
+      </div>
+
+      <div class="topic-item">
+        <i class="fas fa-wind"></i>
+        <h5>Turbulence Modeling</h5>
+        <p>Apply and validate LES and DNS approaches for complex turbulent multiphase flows using OpenFOAM or similar tools.</p>
+      </div>
+
+      <div class="topic-item">
+        <i class="fas fa-temperature-high"></i>
+        <h5>Boiling & Phase Change</h5>
+        <p>Simulate boiling phenomena and phase change processes relevant to nuclear reactor cooling systems.</p>
+      </div>
+
+      <div class="topic-item">
+        <i class="fas fa-code"></i>
+        <h5>Numerical Methods</h5>
+        <p>Develop and implement advanced interface tracking methods, VOF improvements, or coupling algorithms.</p>
+      </div>
+
+      <div class="topic-item">
+        <i class="fas fa-atom"></i>
+        <h5>Nuclear Thermal Hydraulics</h5>
+        <p>Study heat transfer and fluid flow in reactor components, safety systems, and cooling circuits.</p>
+      </div>
+
+      <div class="topic-item">
+        <i class="fas fa-server"></i>
+        <h5>HPC & Optimization</h5>
+        <p>Optimize CFD codes for high-performance computing, implement parallel algorithms, or develop post-processing tools.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="teaching-contact">
+    <h3><i class="fas fa-envelope"></i> Get in Touch</h3>
+    <p>If you're a student interested in working on cutting-edge multiphase flow research, I encourage you to contact me. Please include:</p>
+    <ul>
+      <li>Your academic background and current program</li>
+      <li>Research interests and why they align with my expertise</li>
+      <li>Preferred project duration and timeline</li>
+      <li>Any relevant coursework or experience in fluid dynamics/CFD</li>
+    </ul>
+    <p><strong>Note:</strong> Projects can be tailored to match your interests and skill level. Both computational and theoretical approaches are welcome.</p>
+  </div>
+</div>
+
+</section>
+
+<div class="section-divider">
+  <span class="divider-icon"><i class="fas fa-chevron-down"></i></span>
+</div>
+
 <section id="publications" class="main-section">
 
 <h2><i class="fas fa-book"></i> Publications</h2>
