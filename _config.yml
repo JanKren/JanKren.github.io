@@ -7,7 +7,7 @@ first_name: Jan
 middle_name: 
 last_name: Kren
 contact_note: >
-  Shoot an e-mail!
+  Feel free to reach out for collaborations or questions
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
  Postdoctoral researcher at Laboratory for Simulation and Modelling, Paul Scherrer Institute, Switzerland. Interested in multiphase flow simulations, especially gas-liquid flow simulations with turbulence and phase change with open source solvers (OpenFOAM, T-Flows).
 footer_text: >
