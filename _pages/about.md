@@ -174,6 +174,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
         <p>Master thesis projects involving advanced numerical simulations and in-depth analysis of complex flow phenomena.</p>
       </div>
     </div>
+
   </div>
 </div>
 

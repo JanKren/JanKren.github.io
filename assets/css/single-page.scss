@@ -22,7 +22,7 @@ html {
   padding: 2rem;
   background: linear-gradient(135deg, var(--global-bg-color) 0%, rgba(var(--global-theme-color-rgb), 0.05) 100%);
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
   .stat-item {
     text-align: center;
@@ -69,7 +69,7 @@ html {
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       border-color: var(--global-theme-color);
     }
 
@@ -101,7 +101,7 @@ html {
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
   h3 {
     color: var(--global-text-color);
@@ -204,9 +204,15 @@ html {
   }
 
   @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -241,12 +247,18 @@ html {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 // Main sections and content sections
-.main-section, .content-section {
+.main-section,
+.content-section {
   padding-top: 3rem;
   margin-bottom: 3rem;
 
@@ -376,7 +388,8 @@ section[id] {
 }
 
 // CV section styling
-.cv h3, #cv h3 {
+.cv h3,
+#cv h3 {
   color: var(--global-text-color);
   margin-top: 2rem;
   margin-bottom: 1rem;

@@ -4,12 +4,12 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Jan
-middle_name: 
+middle_name:
 last_name: Kren
 contact_note: >
   Feel free to reach out for collaborations or questions
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
- Postdoctoral researcher at Laboratory for Simulation and Modelling, Paul Scherrer Institute, Switzerland. Interested in multiphase flow simulations, especially gas-liquid flow simulations with turbulence and phase change with open source solvers (OpenFOAM, T-Flows).
+  Postdoctoral researcher at Laboratory for Simulation and Modelling, Paul Scherrer Institute, Switzerland. Interested in multiphase flow simulations, especially gas-liquid flow simulations with turbulence and phase change with open source solvers (OpenFOAM, T-Flows).
 footer_text: >
   Researcher in computational fluid dynamics and multiphase flows.
 keywords: computational fluid dynamics, multiphase flows, Taylor bubbles, OpenFOAM, T-Flows, nuclear thermal hydraulics, boiling, phase change, turbulence, LES, DNS # add your own keywords or leave empty
@@ -200,7 +200,6 @@ exclude:
   - _pages/projects.md
   - _pages/publications.md
   - _pages/cv.md
-
 
 keep_files:
   - CNAME

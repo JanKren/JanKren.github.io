@@ -18,14 +18,18 @@ Taylor bubbles are large gas structures that form in vertical pipes during slug 
 ## Key Findings
 
 ### Bubble Shape Evolution
+
 Our simulations revealed distinct bubble morphologies depending on flow conditions:
+
 - **Transitional flow (Re = 1400)**: Axisymmetric, bullet-train shapes
 - **Turbulent flow (Re = 5600)**: Asymmetric deformation with pronounced wake structures
 
 ### Secondary Vortex Discovery
+
 A novel finding from our high-resolution simulations was the identification of **secondary vortex formation** in the turbulent wake region behind Taylor bubbles. This phenomenon becomes prominent at finer mesh resolutions and represents a new contribution to understanding counter-current flow physics.
 
 ### Interface Wave Dynamics
+
 Advanced interface tracking algorithms captured microscale disturbance waves along bubble interfaces with amplitudes ranging from 10-100 μm. These waves exhibit correlated movement patterns across the bubble surface, providing new insights into surface tension effects in turbulent flows.
 
 <div class="row">
@@ -40,17 +44,20 @@ Advanced interface tracking algorithms captured microscale disturbance waves alo
 ## Computational Methods
 
 ### Numerical Framework
+
 - **Solver**: Modified OpenFOAM with enhanced VOF capabilities
 - **Time Integration**: High-order Diagonally Implicit Runge-Kutta (DIRK) schemes
 - **Interface Reconstruction**: Piecewise Linear Interface Calculation (PLIC) method
 - **Turbulence Modeling**: Wall-Adapting Local Eddy-viscosity (WALE) model
 
 ### Method Comparison
+
 Systematic comparison between algebraic and geometric interface capturing techniques demonstrated the **superior accuracy of geometric reconstruction** for bubble breakup prediction, particularly in transitional flow regimes.
 
 ## Impact and Applications
 
 This research directly supports:
+
 - **Nuclear reactor safety analysis** for emergency cooling scenarios
 - **Multiphase flow prediction** in vertical pipes and channels
 - **Interface tracking method development** for complex geometries

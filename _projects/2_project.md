@@ -25,17 +25,21 @@ Temperature fluctuations at heated surfaces in turbulent flows are critical for 
 ## Key Results
 
 ### Temperature Prediction Differences
+
 Our analysis revealed **20% higher foil temperatures and temperature fluctuations** in LES results compared to DNS. This systematic difference has important implications for reactor safety analysis where accurate temperature prediction is crucial.
 
 ### Near-Wall Model Behavior
+
 Detailed analysis of the LES-WALE model's near-wall behavior explained the observed discrepancies. The study demonstrated that **LES-WALE yields highly accurate results only with finely resolved meshes**, where computational costs may approach those of DNS.
 
 ### Computational Cost Analysis
+
 The research provided quantitative assessment of computational resource requirements, showing that for accurate thermal predictions, LES mesh refinement requirements significantly reduce the expected computational savings over DNS.
 
 ## Methodology
 
 ### Numerical Setup
+
 - **Code**: OpenFOAM with second-order accurate schemes
 - **Approach**: Passive scalar approximation for thermal transport
 - **Boundary Conditions**: Constant heat flux at heated foil section
@@ -51,6 +55,7 @@ The research provided quantitative assessment of computational resource requirem
 </div>
 
 ### Comparative Framework
+
 - **DNS**: High-resolution reference solution capturing all turbulent scales
 - **LES**: Wall-Adapting Local Eddy-viscosity (WALE) subgrid-scale model
 - **Mesh Sensitivity**: Systematic grid refinement studies for both methods
@@ -58,6 +63,7 @@ The research provided quantitative assessment of computational resource requirem
 ## Applications and Impact
 
 This research directly supports:
+
 - **Nuclear reactor thermal analysis** by providing method accuracy guidelines
 - **Experimental design** for heated foil thermometry studies
 - **CFD code validation** for nuclear thermal hydraulics applications

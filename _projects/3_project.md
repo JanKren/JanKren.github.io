@@ -17,12 +17,14 @@ Two-phase flow experiments generate vast amounts of data that require automated 
 ## Algorithm Development
 
 ### Large Interface Tracking
+
 - **High-sensitivity detection** of bubble interfaces from experimental images
 - **Automated phase classification** for liquid and gas regions
 - **Temporal tracking** of interface evolution in turbulent flows
 - **Statistical analysis** of interface characteristics and dynamics
 
 ### Key Innovations
+
 - **Robust edge detection** algorithms capable of handling noise and lighting variations
 - **Multi-frame analysis** for tracking interface motion and deformation
 - **Automated quality control** to identify and flag problematic data
@@ -31,14 +33,18 @@ Two-phase flow experiments generate vast amounts of data that require automated 
 ## Applications and Results
 
 ### Experimental Support
+
 The algorithms were successfully applied to analyze air-water slug flow experiments, providing:
+
 - **Quantitative interface velocities** and acceleration measurements
 - **Bubble size distributions** and shape characterization
 - **Interface roughness analysis** for surface tension studies
 - **Flow regime identification** based on interface characteristics
 
 ### CFD Validation
+
 The processed experimental data enabled detailed validation of computational simulations:
+
 - **Direct comparison** between experimental and simulated bubble shapes
 - **Interface dynamics verification** for numerical model assessment
 - **Quantitative metrics** for simulation accuracy evaluation
@@ -46,12 +52,14 @@ The processed experimental data enabled detailed validation of computational sim
 ## Technical Implementation
 
 ### Image Processing Pipeline
+
 - **Preprocessing**: Noise reduction and contrast enhancement
 - **Segmentation**: Advanced thresholding and region growing algorithms
 - **Feature Extraction**: Geometric and dynamic interface properties
 - **Post-processing**: Statistical analysis and quality assurance
 
 ### Performance Characteristics
+
 - **High throughput**: Capable of processing thousands of images per hour
 - **Accuracy**: Sub-pixel interface detection precision
 - **Robustness**: Handles varying lighting and optical conditions
@@ -60,6 +68,7 @@ The processed experimental data enabled detailed validation of computational sim
 ## Impact and Applications
 
 This work supports:
+
 - **Experimental fluid dynamics** by providing automated analysis tools
 - **CFD validation studies** through precise interface measurements
 - **Flow regime mapping** for industrial applications

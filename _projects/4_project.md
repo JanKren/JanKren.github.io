@@ -17,6 +17,7 @@ The project develops computational approaches for boiling flow simulations in fu
 ## Computational Approaches
 
 **Eulerian Approach**
+
 - Space and time-averaged void fraction predictions
 - Capable of simulating entire fuel assemblies
 - Computationally efficient for full-scale simulations

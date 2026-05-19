@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Manuscript *The wind is always blowing somewhere in Europe: a decade of evidence for continental-scale renewable baseload*, with B. Zajec and I. Tiselj, submitted to *Nature Communications*.
+Manuscript _The wind is always blowing somewhere in Europe: a decade of evidence for continental-scale renewable baseload_, with B. Zajec and I. Tiselj, submitted to _Nature Communications_.

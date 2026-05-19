@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <!-- Include single page styles -->
 <link rel="stylesheet" href="{{ '/assets/css/single-page.css' | relative_url }}">
 <div class="post">
@@ -67,7 +66,6 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
@@ -76,15 +74,15 @@ layout: default
 
 <!-- Fixed social bar at bottom -->
 {% if page.social %}
-<div class="fixed-social-bar">
-  <div class="fixed-social-content">
-    <div class="social-label">Connect:</div>
-    <div class="fixed-contact-icons">{% include social.liquid %}</div>
-    {% if site.contact_note %}
-      <div class="social-note">{{ site.contact_note }}</div>
-    {% endif %}
+  <div class="fixed-social-bar">
+    <div class="fixed-social-content">
+      <div class="social-label">Connect:</div>
+      <div class="fixed-contact-icons">{% include social.liquid %}</div>
+      {% if site.contact_note %}
+        <div class="social-note">{{ site.contact_note }}</div>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endif %}
 
 <!-- Include single page navigation JavaScript -->
