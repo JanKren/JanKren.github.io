@@ -17,7 +17,7 @@ selected_papers: false # will be included in publications section below
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -33,11 +33,11 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <div class="quick-stats">
   <div class="stat-item">
-    <span class="stat-number">10+</span>
+    <span class="stat-number">20+</span>
     <span class="stat-label">Publications</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">4</span>
+    <span class="stat-number">8</span>
     <span class="stat-label">Awards</span>
   </div>
   <div class="stat-item">
@@ -131,7 +131,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 <div class="impact-section">
   <div class="impact-highlight">
     <i class="fas fa-newspaper"></i>
-    <p>My 2024 publications in <em>Physics of Fluids</em> and <em>International Journal of Heat and Fluid Flow</em> present advances in multiphase flow simulation. The work introduces computational approaches that bridge experimental observations with theoretical predictions.</p>
+    <p>Two manuscripts are currently under review: a sharp-interface VOF method for phase-change simulations on unstructured meshes, submitted to <em>Journal of Computational Physics</em> (<a href="https://arxiv.org/abs/2604.14938" target="_blank" rel="noopener">arXiv:2604.14938</a>), and a decade-long analysis of European wind power data, under review at <em>Nature Communications</em>. Earlier 2025 work in <em>Physics of Fluids</em> identified a previously uncharacterized class of capillary waves on Taylor bubble interfaces.</p>
   </div>
   <div class="current-focus">
     <h4><i class="fas fa-bullseye"></i> Current Focus</h4>
