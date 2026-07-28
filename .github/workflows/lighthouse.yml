@@ -1,0 +1,59 @@
+# Replaces the inherited "Lighthouse Badger" workflow, which measured the upstream
+# al-folio demo site, tried to commit badges to a `master` branch this repo does not
+# have, and needed a LIGHTHOUSE_BADGER_TOKEN secret that was never set. It also never
+# ran: its `page_build` trigger cannot fire for pushes made with GITHUB_TOKEN.
+#
+# This one audits the real site, needs no secrets, and commits nothing — the full
+# report is attached to the run as an artifact.
+name: Lighthouse audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL to audit"
+        required: false
+        default: "https://jankren.github.io/"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Chrome 🌐
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Lighthouse 🚦
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+          URL: ${{ inputs.url || 'https://jankren.github.io/' }}
+        run: |
+          npx --yes lighthouse@12 "$URL" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=html --output=json --output-path=./lighthouse \
+            --chrome-flags="--headless=new --no-sandbox" \
+            --quiet
+          # A category Lighthouse could not score reports null, which would render as
+          # NaN; show it as n/a so the summary stays readable.
+          node -e "
+            const r = require('./lighthouse.report.json');
+            const rows = Object.values(r.categories)
+              .map(c => '| ' + c.title + ' | ' + (c.score == null ? 'n/a' : Math.round(c.score * 100)) + ' |')
+              .join('\n');
+            console.log('| Category | Score |\n| --- | --- |\n' + rows);
+          " >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload report ⬆️
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: lighthouse.report.*
+          retention-days: 30

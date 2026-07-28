@@ -3,7 +3,6 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
@@ -18,20 +17,12 @@ on:
       - "Gemfile.lock"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/lighthouse.yml"
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
       - "!README.md"
   pull_request:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
@@ -46,21 +37,20 @@ on:
       - "Gemfile.lock"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/lighthouse.yml"
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
       - "!README.md"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Let an in-flight deploy finish rather than cancelling it mid-push to gh-pages;
+# queued runs collapse so rapid pushes don't race each other on the branch.
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -79,13 +69,6 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
@@ -101,3 +84,17 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+      # Internal links are checked against the site we just built, so this needs no
+      # second Jekyll build. It deliberately runs after the deploy: a broken link
+      # should raise a loud red X, but never stop the site from being published.
+      - name: Check internal links 🔗
+        uses: lycheeverse/lychee-action@v2.1.0
+        with:
+          fail: true
+          jobSummary: true
+          args: >-
+            --offline
+            --root-dir "${{ github.workspace }}/_site"
+            --verbose
+            --no-progress
+            '_site/**/*.html'

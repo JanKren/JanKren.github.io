@@ -8,3 +8,13 @@ repos:
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
+  # Formats with the repo's own pinned Prettier (see package.json), which is the
+  # same version the "Prettier code formatter" workflow installs via `npm ci`.
+  # Run `npm ci` once so node_modules exists, then `pre-commit install`.
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: npx --no-install prettier --write --ignore-unknown
+        language: system
+        files: \.(md|markdown|scss|css|js|json|ya?ml|html|liquid)$

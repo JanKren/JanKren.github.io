@@ -1,52 +1,51 @@
-name: Check for broken links
+# Internal links are checked inside "Deploy site" against the built _site.
+# This workflow only chases *external* links, which rot on their own schedule and
+# fail for reasons that have nothing to do with a given push (rate limits, bot
+# blocking, publisher downtime). Keeping it off the push path is deliberate: link
+# rot should not turn a content commit red.
+name: Check external links
 
 on:
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-  pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
+  workflow_run:
+    workflows: ["Deploy site"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: external-links
+  cancel-in-progress: true
 
 jobs:
-  link-checker:
+  external-links:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
       - name: Link Checker 🔗
         uses: lycheeverse/lychee-action@v2.1.0
         with:
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --verbose --no-progress './**/*.md' './**/*.html'
+          jobSummary: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 403/429 mean "publisher dislikes robots", not "link is dead".
+          # 404.md is skipped because its only link is assembled from Liquid tags.
+          args: >-
+            --user-agent 'curl/7.54'
+            --accept 200,206,403,429
+            --max-retries 3
+            --retry-wait-time 10
+            --timeout 30
+            --exclude-path _pages/404.md
+            --exclude-path README.md
+            --verbose
+            --no-progress
+            './_pages/*.md'
+            './_news/*.md'
+            './_projects/*.md'
+            './_bibliography/*.bib'
+            'https://jankren.github.io/'
