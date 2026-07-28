@@ -87,11 +87,18 @@ jobs:
       # Internal links are checked against the site we just built, so this needs no
       # second Jekyll build. It deliberately runs after the deploy: a broken link
       # should raise a loud red X, but never stop the site from being published.
+      #
+      # lychee is pinned explicitly. The action's default version is what actually
+      # decides whether these flags parse, and v2.1.0 shipped lychee 0.17, which has
+      # no --root-dir and mis-parses al-folio's srcset (comma with no following space:
+      # every entry after the first loses its leading slash and 404s). 0.24 fixes both
+      # and also stops treating `?cache-bust` and bare `#fragment` as filenames.
       - name: Check internal links 🔗
-        uses: lycheeverse/lychee-action@v2.1.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           fail: true
           jobSummary: true
+          lycheeVersion: v0.24.2
           args: >-
             --offline
             --root-dir "${{ github.workspace }}/_site"

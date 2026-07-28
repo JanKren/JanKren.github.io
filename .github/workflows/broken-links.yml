@@ -26,11 +26,14 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
+      # lychee pinned for the same reason as in deploy.yml: 0.17 mis-parses the srcset
+      # al-folio emits and reports phantom 404s for every image variant after the first.
       - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v2.1.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           fail: true
           jobSummary: true
+          lycheeVersion: v0.24.2
           token: ${{ secrets.GITHUB_TOKEN }}
           # 403/429 mean "publisher dislikes robots", not "link is dead".
           # 404.md is skipped because its only link is assembled from Liquid tags.
