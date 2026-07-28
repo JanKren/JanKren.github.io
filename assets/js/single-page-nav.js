@@ -1,175 +1,153 @@
 // Single page navigation enhancements
+//
+// Two pieces of chrome that look like they belong here are deliberately NOT recreated,
+// because al-folio already ships them and a second copy would mean two elements
+// fighting over one id:
+//   * the reading-progress bar (`enable_progressbar` in _config.yml ->
+//     _includes/header.liquid + assets/js/progress-bar.js)
+//   * the back-to-top button (`back_to_top` in _config.yml -> _includes/scripts.liquid
+//     + assets/js/vanilla-back-to-top.min.js). single-page.scss only lifts it above
+//     the fixed social bar.
 document.addEventListener("DOMContentLoaded", function () {
-  // Smooth scrolling for anchor links
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const scrollBehavior = () => (reduceMotion.matches ? "auto" : "smooth");
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
-
-      if (targetSection) {
-        // Calculate offset for fixed header
-        const headerHeight = document.querySelector("nav").offsetHeight;
-        const targetPosition = targetSection.offsetTop - headerHeight - 20;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-
-        // Update active nav item
-        updateActiveNavItem(this);
-      }
-    });
+  const navbar = document.querySelector("nav");
+  const navItems = Array.from(document.querySelectorAll("#navbarNav .nav-item"));
+  const sectionLinks = Array.from(document.querySelectorAll('#navbarNav .nav-link[href^="#"]'));
+  // The "about" entry stays highlighted whenever no section is in view. The search
+  // toggle also carries .nav-link but has no href at all, hence the `|| ""`.
+  const aboutItem = navItems.find((item) => {
+    const link = item.querySelector(".nav-link");
+    return link && !(link.getAttribute("href") || "").startsWith("#");
   });
 
-  // Function to update active navigation item
-  function updateActiveNavItem(activeLink) {
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      link.parentElement.classList.remove("active");
-    });
+  const navHeight = () => (navbar ? navbar.offsetHeight : 0);
 
-    activeLink.classList.add("active");
-    activeLink.parentElement.classList.add("active");
+  // Published as a custom property so CSS `scroll-margin-top` can keep section
+  // headings clear of the fixed navbar. Doing the offset in CSS rather than in
+  // scroll maths here means it also covers the jumps this script never sees:
+  // landing on /#publications directly, and the browser's back/forward restore.
+  function publishNavOffset() {
+    document.documentElement.style.setProperty("--nav-offset", navHeight() + "px");
   }
 
-  // Scroll spy functionality
+  function scrollToSection(target, behavior) {
+    publishNavOffset();
+    target.scrollIntoView({ behavior: behavior, block: "start" });
+  }
+
+  function setActive(link) {
+    navItems.forEach((item) => item.classList.remove("active"));
+    sectionLinks.forEach((l) => {
+      l.classList.remove("active");
+      l.removeAttribute("aria-current");
+    });
+
+    if (link) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "true");
+      link.parentElement.classList.add("active");
+    } else if (aboutItem) {
+      aboutItem.classList.add("active");
+    }
+  }
+
+  // Smooth scrolling for every in-page anchor, not just the navbar: the quick-stat
+  // tiles link to #publications and #cv too, and without this they land underneath
+  // the fixed header. Delegated so anchors rendered later are covered as well.
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    const link = e.target.closest('a[href^="#"]');
+    // data-toggle anchors are Bootstrap controls, not navigation.
+    if (!link || link.hasAttribute("data-toggle")) return;
+
+    const hash = link.getAttribute("href");
+    if (hash.length < 2) return;
+
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!target) return;
+
+    e.preventDefault();
+    scrollToSection(target, scrollBehavior());
+
+    // Keep the URL shareable without letting the browser jump past the fixed header.
+    history.replaceState(null, "", hash);
+    setActive(sectionLinks.find((l) => l.getAttribute("href") === hash) || null);
+  });
+
+  // Scroll spy: highlight the section currently under the header
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+
   function scrollSpy() {
-    const sections = document.querySelectorAll("section[id]");
-    const scrollPos = window.scrollY + document.querySelector("nav").offsetHeight + 50;
+    const probe = window.scrollY + navHeight() + 50;
+    let current = null;
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        const activeNavLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        if (activeNavLink) {
-          updateActiveNavItem(activeNavLink);
-        }
-      }
+      const top = section.getBoundingClientRect().top + window.scrollY;
+      if (probe >= top) current = section;
     });
+
+    // At the very bottom the last section may never reach the probe line.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1] || current;
+    }
+
+    setActive(current ? document.querySelector(`#navbarNav .nav-link[href="#${current.id}"]`) : null);
   }
 
-  // Add scroll event listener for scroll spy
-  window.addEventListener("scroll", scrollSpy);
+  // One rAF-throttled listener for all scroll-driven work
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        scrollSpy();
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
 
-  // Initial call to set active nav item
+  window.addEventListener("resize", publishNavOffset, { passive: true });
+
+  publishNavOffset();
+
+  // The browser's own jump to /#section happened before this script ran, while
+  // --nav-offset was still the CSS fallback. Redo it once at the real header height.
+  // No animation: the visitor asked for this position explicitly, and easing into it
+  // from the top of a long page is just disorienting.
+  if (window.location.hash.length > 1) {
+    const landing = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (landing) scrollToSection(landing, "auto");
+  }
+
   scrollSpy();
 
-  // Add animation to elements when they come into view
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
+  // Reveal cards as they scroll into view (skipped when the visitor prefers reduced motion)
+  if (!reduceMotion.matches && "IntersectionObserver" in window) {
+    const animateElements = document.querySelectorAll(
+      ".expertise-item, .contribution-card, .stat-item, .impact-highlight, .current-focus, .supervision-card, .projects .card"
+    );
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate-in");
-      }
+    const observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.1 }
+    );
+
+    animateElements.forEach((element) => {
+      element.classList.add("will-animate");
+      observer.observe(element);
     });
-  }, observerOptions);
-
-  // Observe all expertise items, contribution cards, and stat items
-  const animateElements = document.querySelectorAll(".expertise-item, .contribution-card, .stat-item, .impact-highlight, .current-focus");
-
-  animateElements.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(20px)";
-    observer.observe(element);
-  });
-
-  // Add CSS for animations
-  const style = document.createElement("style");
-  style.innerHTML = `
-    .animate-in {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .stat-item {
-      transition: all 0.3s ease;
-    }
-
-    .stat-item:hover {
-      transform: scale(1.1);
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Add back to top button functionality
-  const backToTop = document.createElement("button");
-  backToTop.id = "back-to-top";
-  backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-  backToTop.style.display = "none";
-  backToTop.style.position = "fixed";
-  backToTop.style.bottom = "90px"; // Above the social bar
-  backToTop.style.right = "20px";
-  backToTop.style.backgroundColor = "var(--global-theme-color)";
-  backToTop.style.color = "white";
-  backToTop.style.border = "none";
-  backToTop.style.borderRadius = "50%";
-  backToTop.style.width = "50px";
-  backToTop.style.height = "50px";
-  backToTop.style.cursor = "pointer";
-  backToTop.style.zIndex = "1000";
-  backToTop.style.transition = "all 0.3s ease";
-  document.body.appendChild(backToTop);
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      backToTop.style.display = "block";
-      backToTop.style.opacity = "1";
-    } else {
-      backToTop.style.opacity = "0";
-      setTimeout(() => {
-        backToTop.style.display = "none";
-      }, 300);
-    }
-  });
-
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-
-  // Add progress indicator for long pages
-  const progressBar = document.createElement("div");
-  progressBar.id = "reading-progress";
-  progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: var(--global-theme-color);
-    width: 0%;
-    z-index: 10000;
-    transition: width 0.2s ease;
-  `;
-  document.body.appendChild(progressBar);
-
-  window.addEventListener("scroll", function () {
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = (window.scrollY / scrollHeight) * 100;
-    progressBar.style.width = scrolled + "%";
-  });
+  }
 });

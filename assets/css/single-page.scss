@@ -2,8 +2,18 @@
 ---
 
 // Smooth scrolling for anchor links
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// Keep section headings clear of the fixed navbar whenever something scrolls to them:
+// a nav click, a shared /#publications link, or the browser restoring a position on
+// back/forward. --nav-offset is measured and published by single-page-nav.js; the
+// fallback covers the first paint, before that script has run.
+section[id] {
+  scroll-margin-top: calc(var(--nav-offset, 60px) + 20px);
 }
 
 // Lead text styling
@@ -27,6 +37,21 @@ html {
   .stat-item {
     text-align: center;
     padding: 1rem;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 10px;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      color: inherit;
+      transform: scale(1.05);
+      background: rgba(var(--global-theme-color-rgb), 0.08);
+    }
 
     .stat-number {
       display: block;
@@ -721,8 +746,142 @@ body {
   }
 }
 
+// News section
+#news {
+  .news {
+    margin-top: 1rem;
+  }
+
+  .table {
+    th {
+      white-space: nowrap;
+      color: var(--global-theme-color);
+      font-weight: 500;
+      vertical-align: top;
+    }
+
+    td {
+      vertical-align: top;
+    }
+  }
+}
+
+// Research projects grid
+#projects {
+  .projects {
+    margin-top: 2rem;
+  }
+
+  .card {
+    height: 100%;
+    border: 1px solid rgba(var(--global-theme-color-rgb), 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: var(--global-theme-color);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--global-text-color);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--global-text-color-light);
+    }
+
+    img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .col {
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Back to top button — the one al-folio creates in assets/js/vanilla-back-to-top.min.js.
+// Its default corner (bottom: 30px, z-index: 10, both set by `:root #back-to-top` in
+// _sass/_themes.scss) puts it underneath the fixed social bar on this page, so lift it
+// clear and above the bar. `:root` matches that rule's specificity and this stylesheet
+// is loaded after main.css, so it wins; only the home page links it, so other pages
+// keep the theme default.
+:root #back-to-top {
+  bottom: 90px;
+  right: 20px;
+  z-index: 1000;
+}
+
+// Scroll-reveal animation (only applied when motion is welcome — see single-page-nav.js)
+.will-animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Respect visitors who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .will-animate {
+    opacity: 1;
+    transform: none;
+  }
+
+  .section-divider .divider-icon i,
+  .collaboration-note h4 i {
+    animation: none;
+  }
+
+  .expertise-item,
+  .supervision-card,
+  .topic-item,
+  .skill-tag,
+  .quick-stats .stat-item,
+  #projects .card,
+  #back-to-top,
+  .nav-link {
+    transition: none;
+  }
+
+  .expertise-item:hover,
+  .supervision-card:hover,
+  .topic-item:hover,
+  .quick-stats .stat-item:hover,
+  #projects .card:hover {
+    transform: none;
+  }
+}
+
 // Dark mode adjustments
 :root[data-theme="dark"] {
+  #projects .card {
+    background: var(--global-card-bg-color);
+  }
+
   .expertise-item {
     background: var(--global-card-bg-color);
   }

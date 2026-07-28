@@ -10,6 +10,11 @@
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$purple-color};
+  // A bare "r, g, b" channel list rather than a color, so stylesheets can tint with
+  // rgba(var(--global-theme-color-rgb), <alpha>). assets/css/single-page.scss relies
+  // on this for every translucent accent it draws.
+  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)},
+    #{color.channel($purple-color, "blue", $space: rgb)};
   --global-hover-color: #{$purple-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
@@ -81,6 +86,8 @@ html[data-theme="dark"] {
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$cyan-color};
+  --global-theme-color-rgb: #{color.channel($cyan-color, "red", $space: rgb)}, #{color.channel($cyan-color, "green", $space: rgb)},
+    #{color.channel($cyan-color, "blue", $space: rgb)};
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};

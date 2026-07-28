@@ -6,7 +6,6 @@ img: assets/img/publication_preview/DNSLESCoherent.jpg
 importance: 2
 category: work
 status: Finished
-giscus_comments: true
 ---
 
 This project investigates turbulent heat transfer in a square duct configuration where a finite section of a single duct boundary is heated with an infinitely thin foil. The research compares Direct Numerical Simulation (DNS) and Large Eddy Simulation (LES) approaches to understand their relative accuracy and computational efficiency for nuclear thermal hydraulics applications.

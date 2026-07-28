@@ -67,4 +67,4 @@ This research directly supports:
 
 {% cite krenNumericalStudyTaylor2024 %}
 {% cite krenDynamicsTaylorBubble2023 %}
-{% cite tiseljExperimentalNumericalStudy2024 %}
+{% cite tiseljExperimentalNumericalTaylor2025 %}
