@@ -2,11 +2,8 @@
   "basics": {
     "name": "Jan Kren",
     "email": "jan.kren@psi.ch",
-    "phone": "+41 78 444 60 33",
     "nationality": "Slovenian",
     "location": {
-      "address": "Forschungsstrasse 3.73",
-      "postalCode": "5234",
       "city": "Villigen",
       "country": "Switzerland"
     }

@@ -1,82 +1,44 @@
 ---
 layout: page
 title: Interface Tracking Algorithms for Multiphase Flow Analysis
-description: Development of advanced algorithms for large interface tracking in air-water slug flows
-img: assets/img/publication_preview/TaylorSim.jpeg
+description: Image-processing algorithms that locate Taylor bubble interfaces in PIV-LIF and shadowgraphy images
+img: assets/img/publication_preview/TaylorExp.jpg
 importance: 3
 status: Finished
 category: work
+related_publications: true
 ---
 
-This project focuses on developing sophisticated image processing and interface tracking algorithms for analyzing two-phase flow experiments. The work addresses the challenge of automatically classifying and tracking gas-liquid interfaces in high-speed experimental data, providing essential tools for validation of computational fluid dynamics simulations.
+The Taylor bubble experiments at the Jožef Stefan Institute record a bubble held in place by a downward water flow with a high-speed camera. Before velocity fields can be averaged around the bubble, or its interface compared with simulations, every image has to be split into gas and liquid. In a vertical pipe this is hard: light reflected from the air–water interface is deformed by refraction through the pipe wall and the water, so the signal-to-noise ratio is low.
 
-## Project Background
+## PIV-LIF Images: Dynamic Masking
 
-Two-phase flow experiments generate vast amounts of data that require automated classification and analysis. Traditional manual analysis methods are time-consuming and subject to human error. This project developed robust algorithms to differentiate between liquid and gas phases while tracking interface dynamics with high precision.
+Particle Image Velocimetry with Laser Induced Fluorescence (PIV-LIF) needs a dynamic mask that separates the gas phase from the seeded liquid. I developed two algorithms for this:
 
-## Algorithm Development
+- **Summation algorithm**: uses the high seeding density of the images and builds a mask around the brighter particles
+- **Maximum algorithm**: uses the higher seeding density at the bubble nose and trailing edge
 
-### Large Interface Tracking
+Both were tested on datasets with different bubble lengths, image resolutions and seeding densities. Both locate the bubble nose and trailing edge reliably, and the summation algorithm is the more robust of the two because it depends less on its settings. Neither reconstructs the full bubble shape accurately enough. The Python code and a small test dataset are available in the [project repository](https://repo.ijs.si/kren/large-interface-tracking-algorithm).
 
-- **High-sensitivity detection** of bubble interfaces from experimental images
-- **Automated phase classification** for liquid and gas regions
-- **Temporal tracking** of interface evolution in turbulent flows
-- **Statistical analysis** of interface characteristics and dynamics
+## Shadowgraphy Images: Interface Reconstruction
 
-### Key Innovations
+For bubble shape and interface dynamics the experiments also use shadowgraphy, where dedicated reconstruction algorithms turn each high-speed frame into a bubble contour.
 
-- **Robust edge detection** algorithms capable of handling noise and lighting variations
-- **Multi-frame analysis** for tracking interface motion and deformation
-- **Automated quality control** to identify and flag problematic data
-- **Integration capabilities** with CFD simulation data for validation
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/publication_preview/TaylorExp.jpg" title="Interface recognition on a shadowgraphy image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Interface recognition on a shadowgraphy image of a Taylor bubble: (a) raw image, (b) processed image, (c) extracted bubble contour, (d, e) close-ups of the detected interface points.
+</div>
 
-## Applications and Results
+The reconstructed contours showed:
 
-### Experimental Support
+- **Bubble shape**: an asymmetric, bullet-train shape in fully turbulent flow (Re = 5600), but an axisymmetric bubble in transitional flow (Re = 1400)
+- **Interface waves**: disturbance waves travelling along the interface, tracked with enough sensitivity to resolve their correlated motion across the bubble surface
+- **Simulation benchmarks**: measured shapes and bubble speeds for comparison with VOF simulations in OpenFOAM and front-tracking simulations in TrioCFD
 
-The algorithms were successfully applied to analyze air-water slug flow experiments, providing:
+## Results
 
-- **Quantitative interface velocities** and acceleration measurements
-- **Bubble size distributions** and shape characterization
-- **Interface roughness analysis** for surface tension studies
-- **Flow regime identification** based on interface characteristics
-
-### CFD Validation
-
-The processed experimental data enabled detailed validation of computational simulations:
-
-- **Direct comparison** between experimental and simulated bubble shapes
-- **Interface dynamics verification** for numerical model assessment
-- **Quantitative metrics** for simulation accuracy evaluation
-
-## Technical Implementation
-
-### Image Processing Pipeline
-
-- **Preprocessing**: Noise reduction and contrast enhancement
-- **Segmentation**: Advanced thresholding and region growing algorithms
-- **Feature Extraction**: Geometric and dynamic interface properties
-- **Post-processing**: Statistical analysis and quality assurance
-
-### Performance Characteristics
-
-- **High throughput**: Capable of processing thousands of images per hour
-- **Accuracy**: Sub-pixel interface detection precision
-- **Robustness**: Handles varying lighting and optical conditions
-- **Scalability**: Adaptable to different experimental configurations
-
-## Impact and Applications
-
-This work supports:
-
-- **Experimental fluid dynamics** by providing automated analysis tools
-- **CFD validation studies** through precise interface measurements
-- **Flow regime mapping** for industrial applications
-- **Algorithm development** for multiphase flow research
-
-The algorithms have been utilized in multiple research projects, significantly reducing analysis time while improving measurement accuracy and consistency.
-
-## Publications
-
-{% cite krenLargeInterfaceTracking2021 %}
-{% cite zajecTurbulentFlowConfined2021 %}
+The algorithms and the results above are published in {% cite krenLargeInterfaceTracking2021 krenDynamicsTaylorBubble2023 tiseljExperimentalNumericalTaylor2025 %}.

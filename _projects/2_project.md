@@ -6,13 +6,14 @@ img: assets/img/publication_preview/DNSLESCoherent.jpg
 importance: 2
 category: work
 status: Finished
+related_publications: true
 ---
 
 This project investigates turbulent heat transfer in a square duct configuration where a finite section of a single duct boundary is heated with an infinitely thin foil. The research compares Direct Numerical Simulation (DNS) and Large Eddy Simulation (LES) approaches to understand their relative accuracy and computational efficiency for nuclear thermal hydraulics applications.
 
 ## Motivation and Background
 
-Temperature fluctuations at heated surfaces in turbulent flows are critical for nuclear reactor safety analysis. Understanding these phenomena requires accurate prediction of near-wall thermal boundary layer behavior, which presents significant challenges for computational methods. This work addresses the fundamental question of when LES can reliably replace DNS for thermal hydraulics calculations.
+Temperature fluctuations at heated surfaces in turbulent flows matter for nuclear reactor safety analysis, for example through thermal fatigue. Understanding these phenomena requires accurate prediction of near-wall thermal boundary layer behavior, which presents significant challenges for computational methods. This work addresses the fundamental question of when LES can reliably replace DNS for thermal hydraulics calculations.
 
 ## Research Objectives
 
@@ -25,15 +26,11 @@ Temperature fluctuations at heated surfaces in turbulent flows are critical for 
 
 ### Temperature Prediction Differences
 
-Our analysis revealed **20% higher foil temperatures and temperature fluctuations** in LES results compared to DNS. This systematic difference has important implications for reactor safety analysis where accurate temperature prediction is crucial.
+The standard LES-WALE model predicts **about 20% higher foil temperatures and temperature fluctuations** than DNS.
 
 ### Near-Wall Model Behavior
 
-Detailed analysis of the LES-WALE model's near-wall behavior explained the observed discrepancies. The study demonstrated that **LES-WALE yields highly accurate results only with finely resolved meshes**, where computational costs may approach those of DNS.
-
-### Computational Cost Analysis
-
-The research provided quantitative assessment of computational resource requirements, showing that for accurate thermal predictions, LES mesh refinement requirements significantly reduce the expected computational savings over DNS.
+A detailed analysis of the LES-WALE model's near-wall behavior explains the discrepancy. **LES-WALE is highly accurate only on finely resolved meshes**, and the cost of that refinement is hard to justify when DNS is an option.
 
 ## Methodology
 
@@ -61,7 +58,7 @@ The research provided quantitative assessment of computational resource requirem
 
 ## Applications and Impact
 
-This research directly supports:
+This research supports:
 
 - **Nuclear reactor thermal analysis** by providing method accuracy guidelines
 - **Experimental design** for heated foil thermometry studies
@@ -70,10 +67,8 @@ This research directly supports:
 
 ## Experimental Connection
 
-The computational work supported the design and analysis of experiments in the THELMA laboratory at Jožef Stefan Institute, providing critical insights for interpreting thermal fluctuation measurements and optimizing experimental parameters.
+The simulations supported the design of the heated-foil experiment in the THELMA laboratory at Jožef Stefan Institute. LES of the planned setup set the foil heating power, and the analysis of coherent thermal structures determined the spatial resolution and frame rate the high-speed thermal camera needs.
 
-## Publications
+## Results
 
-{% cite krenDNSVsTurbulent2024 %}
-{% cite tiseljInvestigationTurbulentFlow2021 %}
-{% cite krenDNSSQUAREDUCT2022 %}
+This work is published in {% cite krenDNSVsTurbulent2024 tiseljInvestigationTurbulentFlow2021 sharmaThermalStreakSpacing2023 krenDNSSQUAREDUCT2022 krenLargeEddySimulation2020 %} and in my MSc thesis {% cite krenSimulacijeTurbulentnegaPrenosa2020 %}.

@@ -166,25 +166,6 @@ section[id] {
 .impact-section {
   margin: 2rem 0;
 
-  .impact-highlight {
-    background: linear-gradient(135deg, rgba(var(--global-theme-color-rgb), 0.05) 0%, transparent 100%);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-
-    i {
-      font-size: 1.5rem;
-      color: var(--global-theme-color);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    p {
-      margin: 0;
-      line-height: 1.7;
-    }
-  }
-
   .current-focus {
     background: var(--global-bg-color);
     padding: 1.5rem;

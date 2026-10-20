@@ -1,0 +1,8 @@
+---
+layout: post
+date: 2026-04-16 10:00:00 +0200
+inline: true
+related_posts: false
+---
+
+New preprint on arXiv with B. Ničeno and Y. Sato — _Sharp-interface VOF method for phase-change simulations on unstructured meshes_ ([arXiv:2604.14938](https://arxiv.org/abs/2604.14938)). The manuscript has since been submitted to _Computers & Fluids_.

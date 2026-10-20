@@ -7,6 +7,7 @@ subtitle: Postdoctoral Researcher | Computational Fluid Dynamics | Nuclear Therm
 profile:
   align: right
   image: prof_pic.jpg
+  alt: Portrait of Jan Kren
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>OHSA/D03 PSI EAST</p>
@@ -31,17 +32,19 @@ latest_posts:
 I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Laboratory for Simulation and Modelling</a>, Paul Scherrer Institute, Switzerland, specializing in computational fluid dynamics and nuclear thermal hydraulics. My research focuses on numerical simulations of multiphase flows, particularly Taylor bubble dynamics in counter-current turbulent flows and boiling phenomena.
 </div>
 
+{% comment %} Counted from papers.bib and resume.json at build time; submitted manuscripts are excluded. {% endcomment %}
+
 <div class="quick-stats">
   <a class="stat-item" href="#publications">
-    <span class="stat-number">22</span>
+    <span class="stat-number">{% bibliography_count --query @*[status!=submitted] %}</span>
     <span class="stat-label">Publications</span>
   </a>
   <a class="stat-item" href="#publications">
-    <span class="stat-number">15</span>
+    <span class="stat-number">{% bibliography_count --query @article[journal,status!=submitted] %}</span>
     <span class="stat-label">Journal Articles</span>
   </a>
   <a class="stat-item" href="#cv">
-    <span class="stat-number">8</span>
+    <span class="stat-number">{{ site.data.resume.awards | size }}</span>
     <span class="stat-label">Awards</span>
   </a>
 </div>
@@ -93,6 +96,17 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
   </div>
 </div>
 
+<div class="impact-section">
+  <div class="current-focus">
+    <h4><i class="fas fa-bullseye" aria-hidden="true"></i> Current Focus</h4>
+    <p>I am developing first-principles boiling simulations with sharp-interface VOF methods on unstructured meshes, aimed at accurate predictions for nuclear industry applications.</p>
+  </div>
+  <div class="collaboration-note">
+    <h4><i class="fas fa-handshake" aria-hidden="true"></i> Open for Collaboration</h4>
+    <p>I am actively seeking collaboration opportunities in computational fluid dynamics, multiphase flow modeling, and nuclear thermal hydraulics. Feel free to <a href="mailto:{{ site.data.socials.email | encode_email }}">get in touch</a> to discuss potential research partnerships or joint projects.</p>
+  </div>
+</div>
+
 </section>
 
 <section class="content-section">
@@ -101,54 +115,34 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 <div class="contribution-card">
   <h3><i class="fas fa-flask" aria-hidden="true"></i> Taylor Bubble Research</h3>
-  <p>My doctoral research provided groundbreaking insights into Taylor bubble behavior in counter-current flows. I developed numerical methods that revealed:</p>
+  <p>My doctoral research combined experiments and simulations of Taylor bubbles held stationary in counter-current flow. Its main findings:</p>
   <ul class="achievement-list">
-    <li><span class="highlight">Asymmetric bubble shapes</span> in fully turbulent flow vs. axisymmetric forms in transitional flow</li>
-    <li><span class="highlight">Secondary vortex formation</span> in turbulent wake regions - a novel discovery</li>
-    <li><span class="highlight">Interface wave dynamics</span> with amplitudes of 10-100 μm using high-sensitivity tracking algorithms</li>
+    <li><span class="highlight">Asymmetric, bullet-train-shaped bubbles</span> in fully turbulent flow (Re = 5600), but axisymmetric bubbles in transitional flow (Re = 1400)</li>
+    <li>A <span class="highlight">secondary vortex</span> in the turbulent wake behind the bubble, most pronounced at fine mesh resolution</li>
+    <li><span class="highlight">Disturbance waves on the interface</span> with amplitudes of 10–100 μm, resolved with dedicated interface-tracking algorithms</li>
   </ul>
 </div>
 
 <div class="contribution-card">
   <h3><i class="fas fa-code" aria-hidden="true"></i> Computational Methods Development</h3>
-  <p>I have contributed to advancing numerical simulation techniques, including:</p>
+  <p>Methods I have implemented or evaluated:</p>
   <ul class="achievement-list">
-    <li>Implementation of <span class="highlight">high-order Runge-Kutta time integration</span> schemes in OpenFOAM</li>
-    <li>Development of <span class="highlight">geometric interface reconstruction</span> methods for bubble tracking</li>
-    <li>Comparative analysis of <span class="highlight">algebraic vs. geometric capturing techniques</span> for interface dynamics</li>
+    <li><span class="highlight">High-order Runge–Kutta time integration</span> for VOF simulations in OpenFOAM</li>
+    <li><span class="highlight">Geometric (PLIC) interface reconstruction</span> for bubble tracking</li>
+    <li>Comparison of <span class="highlight">algebraic and geometric interface capturing</span> for bubble breakup</li>
+    <li>A <span class="highlight">sharp-interface VOF phase-change method</span> for arbitrary polyhedral meshes (submitted)</li>
   </ul>
 </div>
 
 <div class="contribution-card">
   <h3><i class="fas fa-radiation" aria-hidden="true"></i> Nuclear Thermal Hydraulics</h3>
-  <p>My work directly supports nuclear reactor safety analysis through:</p>
+  <p>Applications to reactor thermal hydraulics and safety:</p>
   <ul class="achievement-list">
-    <li><span class="highlight">Temperature fluctuation studies</span> in heated foil configurations</li>
+    <li><span class="highlight">Temperature fluctuations</span> at heated-foil boundaries in turbulent duct flow</li>
     <li><span class="highlight">Boiling and phase-change modeling</span> for reactor thermal analysis</li>
-    <li><span class="highlight">Rod bundle flow simulations</span> for advanced reactor designs</li>
+    <li><span class="highlight">Boiling flow in fuel rod bundles</span> (BRAVA project)</li>
     <li><span class="highlight">Conjugate heat transfer</span> modeling with experimental validation</li>
   </ul>
-</div>
-
-</section>
-
-<section class="content-section">
-
-<h2><i class="fas fa-chart-line" aria-hidden="true"></i> Recent Impact</h2>
-
-<div class="impact-section">
-  <div class="impact-highlight">
-    <i class="fas fa-newspaper" aria-hidden="true"></i>
-    <p>Two manuscripts are currently under review: a sharp-interface VOF method for phase-change simulations on unstructured meshes, submitted to <em>Journal of Computational Physics</em> (<a href="https://arxiv.org/abs/2604.14938" target="_blank" rel="noopener">arXiv:2604.14938</a>), and a decade-long analysis of European wind power data, under review at <em>Nature Communications</em>. Earlier 2025 work in <em>Physics of Fluids</em> identified a previously uncharacterized class of capillary waves on Taylor bubble interfaces.</p>
-  </div>
-  <div class="current-focus">
-    <h4><i class="fas fa-bullseye" aria-hidden="true"></i> Current Focus</h4>
-    <p>Currently, I am exploring boiling simulations from first principles using novel VOF and other numerical methods, with the end goal of accurate simulations for nuclear industry applications.</p>
-  </div>
-  <div class="collaboration-note">
-    <h4><i class="fas fa-handshake" aria-hidden="true"></i> Open for Collaboration</h4>
-    <p>I am actively seeking collaboration opportunities in computational fluid dynamics, multiphase flow modeling, and nuclear thermal hydraulics. Feel free to <a href="mailto:{{ site.data.socials.email | encode_email }}">get in touch</a> to discuss potential research partnerships or joint projects.</p>
-  </div>
 </div>
 
 </section>
@@ -185,7 +179,12 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 {% include bib_search.liquid %}
 
 <div class="publications">
-{% bibliography %}
+{% capture submitted_count %}{% bibliography_count --query @*[status=submitted] %}{% endcapture %}
+{% if submitted_count != '0' %}
+<h2 class="bibliography">Submitted</h2>
+{% bibliography --query @*[status=submitted] --group_by none %}
+{% endif %}
+{% bibliography --query @*[status!=submitted] %}
 </div>
 
 </section>
@@ -232,6 +231,12 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 <section id="cv" class="main-section">
 
 <h2><i class="fas fa-file-alt" aria-hidden="true"></i> Curriculum Vitae</h2>
+
+{% capture cv_pdf_exists %}{% file_exists assets/pdf/Jan_Kren_CV.pdf %}{% endcapture %}
+{% if cv_pdf_exists == 'true' %}
+
+<p class="cv-download"><a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/Jan_Kren_CV.pdf' | relative_url }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a></p>
+{% endif %}
 
 <div class="cv">
 

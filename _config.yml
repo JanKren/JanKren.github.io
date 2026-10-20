@@ -170,6 +170,8 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - bin/
+  - GOOGLE_SEARCH_SETUP.md
+  - requirements.txt
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -318,6 +320,7 @@ filtered_bibtex_keywords:
     bibtex_show,
     blog,
     code,
+    dimensions,
     google_scholar_id,
     html,
     inspirehep_id,
@@ -326,6 +329,7 @@ filtered_bibtex_keywords:
     preview,
     selected,
     slides,
+    status,
     supp,
     video,
     website,
@@ -357,7 +361,6 @@ external_links:
     - _projects/7_project.md
     - _projects/8_project.md
     - _projects/9_project.md
-    - assets/jupyter/blog.ipynb
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
 # -----------------------------------------------------------------------------

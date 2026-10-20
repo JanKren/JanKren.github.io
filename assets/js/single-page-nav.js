@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Reveal cards as they scroll into view (skipped when the visitor prefers reduced motion)
   if (!reduceMotion.matches && "IntersectionObserver" in window) {
     const animateElements = document.querySelectorAll(
-      ".expertise-item, .contribution-card, .stat-item, .impact-highlight, .current-focus, .supervision-card, .projects .card"
+      ".expertise-item, .contribution-card, .stat-item, .current-focus, .supervision-card, .projects .card"
     );
 
     const observer = new IntersectionObserver(

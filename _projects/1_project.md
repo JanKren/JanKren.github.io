@@ -1,44 +1,44 @@
 ---
 layout: page
 title: Taylor Bubble Dynamics in Counter-Current Turbulent Flow
-description: Advanced numerical investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods
-img: assets/img/publication_preview/TaylorExp.jpg
+description: Numerical and experimental investigation of Taylor bubble breakup and interface dynamics using LES and VOF methods
+img: assets/img/publication_preview/TaylorSim.jpeg
 importance: 1
 category: work
 status: Finished
 related_publications: true
 ---
 
-This research investigates the complex dynamics of Taylor bubbles in vertical counter-current turbulent flows using advanced computational fluid dynamics techniques. The work combines high-fidelity Large Eddy Simulation (LES) with experimental validation to understand bubble breakup mechanisms and interface behavior.
+This research investigates the dynamics of Taylor bubbles in vertical counter-current turbulent flows. The work combines high-fidelity Large Eddy Simulation (LES) with experimental validation to understand bubble breakup mechanisms and interface behavior.
 
 ## Project Overview
 
-Taylor bubbles are large gas structures that form in vertical pipes during slug flow regimes. Understanding their behavior in counter-current flow is crucial for nuclear reactor safety, particularly in emergency core cooling scenarios. This project developed novel numerical methods to capture the intricate physics of bubble-liquid interactions.
+Taylor bubbles are large gas structures that form in vertical pipes during slug flow regimes. Understanding their behavior in counter-current flow is crucial for nuclear reactor safety, particularly in emergency core cooling scenarios. The project combined simulations and experiments of a bubble held stationary by a downward liquid flow, which makes it possible to observe breakup and interface dynamics over long periods.
 
 ## Key Findings
 
 ### Bubble Shape Evolution
 
-Our simulations revealed distinct bubble morphologies depending on flow conditions:
+Experiments showed that the bubble shape depends on the flow regime:
 
-- **Transitional flow (Re = 1400)**: Axisymmetric, bullet-train shapes
-- **Turbulent flow (Re = 5600)**: Asymmetric deformation with pronounced wake structures
+- **Transitional flow (Re = 1400)**: axisymmetric bubbles
+- **Fully turbulent flow (Re = 5600)**: asymmetric, bullet-train-shaped bubbles
 
-### Secondary Vortex Discovery
+### Secondary Vortex in the Wake
 
-A novel finding from our high-resolution simulations was the identification of **secondary vortex formation** in the turbulent wake region behind Taylor bubbles. This phenomenon becomes prominent at finer mesh resolutions and represents a new contribution to understanding counter-current flow physics.
+The high-resolution simulations show a **secondary vortex** in the turbulent wake region behind the bubble, which had not been reported for counter-current Taylor bubble flows. It is most prominent at finer mesh resolutions.
 
 ### Interface Wave Dynamics
 
-Advanced interface tracking algorithms captured microscale disturbance waves along bubble interfaces with amplitudes ranging from 10-100 μm. These waves exhibit correlated movement patterns across the bubble surface, providing new insights into surface tension effects in turbulent flows.
+Interface tracking on high-speed camera images captured disturbance waves along the bubble interface with amplitudes of 10–100 μm. The waves move in a correlated way across the bubble surface.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/publication_preview/TaylorSim.jpeg" title="Experimental Taylor bubble interface waves" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/publication_preview/TaylorSim.jpeg" title="Simulated and experimental Taylor bubbles" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Experimental visualization of Taylor bubble interface showing microscale wave dynamics in counter-current turbulent flow
+    Simulated Taylor bubbles in counter-current flow, coloured by the liquid velocity U<sub>x</sub>, next to an experimental image of the bubble (right).
 </div>
 
 ## Computational Methods
@@ -52,19 +52,17 @@ Advanced interface tracking algorithms captured microscale disturbance waves alo
 
 ### Method Comparison
 
-Systematic comparison between algebraic and geometric interface capturing techniques demonstrated the **superior accuracy of geometric reconstruction** for bubble breakup prediction, particularly in transitional flow regimes.
+A comparison of algebraic and geometric interface capturing in the transitional regime (Re = 1400) showed that **geometric reconstruction predicts bubble breakup more accurately**.
 
 ## Impact and Applications
 
-This research directly supports:
+This research supports:
 
 - **Nuclear reactor safety analysis** for emergency cooling scenarios
 - **Multiphase flow prediction** in vertical pipes and channels
 - **Interface tracking method development** for complex geometries
 - **Understanding of turbulent wake structures** in multiphase systems
 
-## Publications
+## Results
 
-{% cite krenNumericalStudyTaylor2024 %}
-{% cite krenDynamicsTaylorBubble2023 %}
-{% cite tiseljExperimentalNumericalTaylor2025 %}
+The findings above are published in {% cite krenNumericalStudyTaylor2024 krenDynamicsTaylorBubble2023 tiseljExperimentalNumericalTaylor2025 krenTaylorBubbleBreakup2024 tiseljCapillaryWavesTaylor2025 %} and in my PhD thesis {% cite krenDynamicsTaylorBubble2024 %}.

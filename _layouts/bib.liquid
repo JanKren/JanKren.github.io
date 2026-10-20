@@ -157,7 +157,12 @@
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
-    {% if entry.month %}
+    {% comment %} Liquid variables outlive the loop iteration, so clear them or an entry without a month shows the previous entry's. {% endcomment %}
+    {% assign entrymonth = '' %}
+    {% assign entryyear = '' %}
+    {% if entry.status == 'submitted' %}
+      {% capture entrytype %}Submitted to <em>{{ entry.journal }}</em>{% endcapture %}
+    {% elsif entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
     {% if entry.year %}
