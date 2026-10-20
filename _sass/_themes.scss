@@ -8,22 +8,24 @@
   --global-bg-color: #{$white-color};
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  // A bare "r, g, b" channel list rather than a color, so stylesheets can tint with
-  // rgba(var(--global-theme-color-rgb), <alpha>). assets/css/single-page.scss relies
-  // on this for every translucent accent it draws.
-  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)},
-    #{color.channel($purple-color, "blue", $space: rgb)};
-  --global-hover-color: #{$purple-color};
+  --global-text-color-light: #{$psi-grey-dark};
+  // PSI yellow is unreadable as text on white, so in the light theme the "theme" colour
+  // (links, icons, accent text) is black, as on psi.ch, and yellow only appears as a fill
+  // through the --global-accent-* colours below.
+  --global-theme-color: #{$black-color};
+  --global-hover-color: #{$black-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
+  // Accent fill and the text colour that sits on it.
+  --global-accent-color: #{$psi-yellow};
+  --global-accent-text-color: #{$black-color};
+  --global-accent-pale-color: #{$psi-yellow-pale};
+  --global-footer-bg-color: #{$black-color};
+  --global-footer-text-color: #{$psi-grey-light};
   --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
+  --global-distill-app-color: #{$psi-grey-dark};
+  --global-divider-color: rgba(0, 0, 0, 0.14);
   --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
+  --global-highlight-color: #{$black-color};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
@@ -81,21 +83,24 @@
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #{$grey-color-dark};
+  --global-bg-color: #{$psi-dark-bg};
   --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$cyan-color};
-  --global-theme-color-rgb: #{color.channel($cyan-color, "red", $space: rgb)}, #{color.channel($cyan-color, "green", $space: rgb)},
-    #{color.channel($cyan-color, "blue", $space: rgb)};
-  --global-hover-color: #{$cyan-color};
-  --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+  --global-text-color: #{$psi-dark-text};
+  --global-text-color-light: #{$psi-grey-light};
+  // On the dark background PSI yellow reads well, so it is the accent text colour too.
+  --global-theme-color: #{$psi-yellow};
+  --global-hover-color: #{$psi-yellow};
+  --global-hover-text-color: #{$black-color};
+  --global-accent-color: #{$psi-yellow};
+  --global-accent-text-color: #{$black-color};
+  --global-accent-pale-color: #{rgba($psi-yellow, 0.16)};
+  --global-footer-bg-color: #{$black-color};
+  --global-footer-text-color: #{$psi-grey-light};
+  --global-footer-link-color: #{$white-color};
+  --global-distill-app-color: #{$psi-grey-light};
+  --global-divider-color: #474747;
+  --global-card-bg-color: #{$psi-dark-card};
+  --global-highlight-color: #{$psi-yellow};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
     #{color.channel($white-color, "green", $space: rgb)},

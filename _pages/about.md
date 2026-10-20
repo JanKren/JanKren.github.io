@@ -147,9 +147,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 </section>
 
-<div class="section-divider">
-  <span class="divider-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
-</div>
+<div class="section-divider"></div>
 
 <section id="projects" class="main-section">
 
@@ -168,9 +166,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 </section>
 
-<div class="section-divider">
-  <span class="divider-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
-</div>
+<div class="section-divider"></div>
 
 <section id="publications" class="main-section">
 
@@ -189,9 +185,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 </section>
 
-<div class="section-divider">
-  <span class="divider-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
-</div>
+<div class="section-divider"></div>
 
 <section id="teaching" class="main-section">
 
@@ -224,9 +218,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 
 </section>
 
-<div class="section-divider">
-  <span class="divider-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
-</div>
+<div class="section-divider"></div>
 
 <section id="cv" class="main-section">
 
@@ -235,7 +227,7 @@ I am a postdoctoral researcher at the <a href="https://www.psi.ch/en/lsm">Labora
 {% capture cv_pdf_exists %}{% file_exists assets/pdf/Jan_Kren_CV.pdf %}{% endcapture %}
 {% if cv_pdf_exists == 'true' %}
 
-<p class="cv-download"><a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/Jan_Kren_CV.pdf' | relative_url }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a></p>
+<p class="cv-download"><a class="btn btn-sm psi-btn" href="{{ '/assets/pdf/Jan_Kren_CV.pdf' | relative_url }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a></p>
 {% endif %}
 
 <div class="cv">

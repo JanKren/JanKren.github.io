@@ -33,7 +33,7 @@ The high-resolution simulations show a **secondary vortex** in the turbulent wak
 Interface tracking on high-speed camera images captured disturbance waves along the bubble interface with amplitudes of 10–100 μm. The waves move in a correlated way across the bubble surface.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-8 mx-auto mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/publication_preview/TaylorSim.jpeg" title="Simulated and experimental Taylor bubbles" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>

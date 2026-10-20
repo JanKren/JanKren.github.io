@@ -32,9 +32,21 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// PSI palette, taken from the PSI corporate templates (Beamer theme and psi.ch)
+$psi-yellow: #f0f500;
+$psi-yellow-pale: #fafab4;
+$psi-grey-dark: #4b4b4b;
+$psi-grey-light: #b9b9b9;
+$psi-dark-bg: #252525;
+$psi-dark-text: #d2d2d2;
+$psi-dark-card: #2f2f2f;
+
+// PSI's web font (Accelerate) is commercial; Inter is the closest free neutral grotesk.
+$psi-font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
+$code-bg-color-light: #f2f2f2;
 $code-bg-color-dark: #2c3237 !default;
 
 // Font awesome location

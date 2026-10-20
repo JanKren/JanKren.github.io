@@ -1,0 +1,236 @@
+/*******************************************************************************
+ * PSI look, shared by every page
+ *
+ * Black text on white, PSI yellow as a fill behind black text, semibold headings
+ * and flat, square surfaces. Colours come from the --global-* tokens in
+ * _themes.scss, so the dark theme only has to change those tokens.
+ ******************************************************************************/
+
+// Typography. MDB forces Roboto at weight 300 on body, headings and navbar.
+//
+// Note that _base.scss sets color: var(--global-text-color) directly on p, span, li,
+// div, strong and em, so any block with its own text colour (the header band, stat
+// tiles, the black collaboration box) has to hand that colour down explicitly.
+
+body {
+  font-family: $psi-font-family;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--global-accent-color);
+  color: var(--global-accent-text-color);
+}
+
+// Links in running text are underlined, because in the light theme they are the same
+// black as the text around them. Hovering fills them with yellow, as on psi.ch.
+
+[role="main"] :is(p, li, td, blockquote, .lead-text) a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--global-accent-text-color);
+    background-color: var(--global-accent-color);
+    text-decoration: none;
+  }
+}
+
+// Square outline buttons that fill with yellow on hover.
+
+@mixin psi-button {
+  color: var(--global-text-color);
+  border: 1px solid var(--global-text-color);
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-accent-text-color);
+    background-color: var(--global-accent-color);
+    border-color: var(--global-accent-color);
+  }
+}
+
+// Navbar: opaque, with a yellow bar under the current or hovered item.
+
+.navbar {
+  opacity: 1;
+  font-weight: 400;
+
+  // Inter is wider than Roboto Light; keep the brand and all section links on one line.
+  .navbar-nav .nav-link {
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
+  .navbar-brand .small {
+    font-size: 0.8rem;
+  }
+}
+
+.navbar.navbar-light {
+  .navbar-brand {
+    font-weight: 400;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    &:hover {
+      color: var(--global-text-color);
+      box-shadow: inset 0 -4px 0 var(--global-accent-color);
+    }
+  }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+}
+
+// Page header: a full-width band in PSI yellow. The box-shadow paints the band out to
+// the window edges without widening the page, and clip-path trims it vertically.
+
+// The negative top margin cancels the main container's mt-5, so the band starts right
+// under the navbar.
+.post-header {
+  padding: 2.5rem 0 2rem;
+  margin-top: -3rem;
+  margin-bottom: 2.5rem;
+  color: var(--global-accent-text-color);
+  background: var(--global-accent-color);
+  box-shadow: 0 0 0 100vmax var(--global-accent-color);
+  clip-path: inset(0 -100vmax);
+
+  .post-title {
+    font-size: 2.75rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: inherit;
+    margin-bottom: 0.75rem;
+
+    span {
+      color: inherit;
+    }
+
+    .font-weight-bold {
+      font-weight: 700 !important;
+    }
+  }
+
+  .desc,
+  .post-description {
+    color: inherit;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 576px) {
+    padding: 1.75rem 0 1.5rem;
+
+    .post-title {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Images are flat and square.
+
+img.z-depth-1,
+.z-depth-1 img {
+  box-shadow: none !important;
+}
+
+img.rounded,
+.rounded img {
+  border-radius: 0 !important;
+}
+
+.profile .more-info {
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+
+  p {
+    display: block;
+    color: inherit;
+  }
+}
+
+// Publications
+
+.publications {
+  h2.bibliography {
+    color: var(--global-text-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  ol.bibliography li {
+    // Uniform thumbnail tiles, whatever the source image's shape
+    .preview {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .abbr abbr {
+      background-color: var(--global-accent-color);
+      color: var(--global-accent-text-color);
+      border-radius: 0;
+    }
+
+    .author > em {
+      font-weight: 600;
+      border-bottom: none;
+    }
+
+    .links a.btn {
+      @include psi-button;
+    }
+  }
+}
+
+.btn.psi-btn {
+  @include psi-button;
+}
+
+::highlight(search) {
+  background-color: var(--global-accent-color);
+  color: var(--global-accent-text-color);
+}
+
+// Back-to-top button: a black square with a yellow arrow.
+
+#back-to-top {
+  background: $black-color !important;
+  color: $psi-yellow !important;
+  border-radius: 0 !important;
+}
+
+// Dark theme: the header band turns black with a yellow name, so a page-wide yellow
+// block does not glare.
+
+html[data-theme="dark"] {
+  .post-header {
+    color: $white-color;
+    background: $black-color;
+    box-shadow: 0 0 0 100vmax $black-color;
+
+    .post-title {
+      color: $psi-yellow;
+    }
+  }
+}
