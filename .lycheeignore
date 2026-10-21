@@ -1,2 +1,5 @@
 linkedin.com
 reddit.com
+# Links built by Liquid ({{ ... }}) only exist once Jekyll renders them; the
+# rendered versions are checked on the live site and in the deploy build.
+%7B%7B
