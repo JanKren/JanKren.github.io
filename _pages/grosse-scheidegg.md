@@ -2,7 +2,7 @@
 layout: page
 title: Over Grosse Scheidegg
 description: A gravel-bike loop from Interlaken over the pass under the Wetterhorn · 30 August 2026
-permalink: /rides/grosse-scheidegg/
+permalink: /scheidegg/
 nav: false
 map: true
 # Paste the 11-character ID from the YouTube link (youtube.com/watch?v=XXXXXXXXXXX).
