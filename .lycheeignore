@@ -3,3 +3,6 @@ reddit.com
 # Links built by Liquid ({{ ... }}) only exist once Jekyll renders them; the
 # rendered versions are checked on the live site and in the deploy build.
 %7B%7B
+# Map tile URL templates ({z}/{x}/{y}) on the ride pages are not real links.
+wmts\.geo\.admin\.ch
+tile\.openstreetmap\.org
