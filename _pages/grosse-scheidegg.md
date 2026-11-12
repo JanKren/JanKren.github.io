@@ -7,7 +7,7 @@ nav: false
 map: true
 # Paste the 11-character ID from the YouTube link (youtube.com/watch?v=XXXXXXXXXXX).
 # While it is empty, the video section is hidden.
-youtube_id:
+youtube_id: fnUjmDFNuFg
 chapters:
   - { t: "0:00", title: "Cold open" }
   - { t: "0:13", title: "Morning: train to the start" }
